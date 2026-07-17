@@ -205,27 +205,12 @@ button{ font-family:inherit; }
 .inspire-box{ text-align:center; }
 .inspire-box .hero-lead{
   font-family:var(--font-display);
-  font-size:clamp(1rem,1.5vw,1.25rem);
+  font-size:clamp(0.88rem,1.15vw,1.02rem);
   font-weight:750; color:var(--ink);
-  line-height:1.35; letter-spacing:-0.015em; text-wrap:balance;
+  line-height:1.5; letter-spacing:-0.01em; text-wrap:balance;
   margin:0 auto; max-width:none;
 }
 .hero-lead{ font-size:1rem; color:var(--ink-dim); }
-.cta-row{ display:grid; gap:1.2rem; margin-bottom:1.2rem; }
-@media (min-width:720px){ .cta-row{ grid-template-columns:1fr 1fr; } }
-.cta-box{
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  text-decoration:none; cursor:pointer;
-  font-family:var(--font-display); font-size:1.12rem; font-weight:700; color:var(--ink);
-  margin-bottom:0;
-  transition:border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-}
-.cta-box .arrow{ font-size:1.3rem; transition:transform 0.25s; }
-.cta-box:hover .arrow, .cta-box:focus-visible .arrow{ transform:translateX(6px); }
-.cta-violet .arrow{ color:var(--violet); }
-.cta-cyan .arrow{ color:var(--cyan); }
-.cta-violet:hover, .cta-violet:focus-visible{ border-color:rgba(139,124,248,0.55); }
-.cta-cyan:hover, .cta-cyan:focus-visible{ border-color:rgba(76,201,232,0.55); }
 .edu-box{ margin-bottom:0; }
 .edu-title{
   font-family:var(--font-mono); font-size:0.7rem; font-weight:600;
@@ -617,11 +602,6 @@ footer{ padding-block:2.2rem; }
 
     <div class="glass glass-3d inspire-box">
       <p class="hero-lead">Inspiring teams to surpass Product, Engineering, Delivery, Business and Customer KPIs — by leveraging business and technology acumen, industry best practices, process improvement, people capability, and a performance-driven culture of continuous innovation.</p>
-    </div>
-
-    <div class="cta-row">
-      <a class="glass glass-3d cta-box cta-violet" href="#timeline"><span>Deep dive into my career journey</span><span class="arrow">→</span></a>
-      <a class="glass glass-3d cta-box cta-cyan" href="#skills"><span>How I leveraged my skills</span><span class="arrow">→</span></a>
     </div>
 
     <div class="glass glass-3d edu-box">
