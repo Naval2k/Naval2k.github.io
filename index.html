@@ -474,6 +474,32 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
   padding:0.32em 0.7em; border-radius:var(--r-pill);
   background:rgba(234,237,249,0.02);
 }
+/* ============ SUMMARY ============ */
+.summary-box{ margin-bottom:0; }
+.summary-lead{
+  font-family:var(--font-display);
+  font-size:clamp(0.95rem,1.25vw,1.1rem); font-weight:700; color:var(--ink);
+  line-height:1.5; text-wrap:balance;
+  margin-bottom:1.5rem; padding-bottom:1.4rem;
+  border-bottom:1px solid var(--line);
+}
+.sum-points{ margin:0; padding:0; list-style:none; display:grid; gap:0.85rem; }
+@media (min-width:880px){ .sum-points{ grid-template-columns:1fr 1fr; column-gap:2.4rem; } }
+.sum-points li{
+  position:relative; padding-left:1.35em;
+  color:var(--ink-dim); font-size:0.92rem; line-height:1.55;
+}
+.sum-points li strong{ color:var(--ink); font-weight:700; }
+.sum-points li::before{
+  content:""; position:absolute; left:0; top:0.5em;
+  width:7px; height:7px; border-radius:2px;
+  background:var(--violet); opacity:0.85;
+  transform:rotate(45deg);
+}
+.sum-points li:nth-child(4n+2)::before{ background:var(--cyan); }
+.sum-points li:nth-child(4n+3)::before{ background:var(--amber); }
+.sum-points li:nth-child(4n+4)::before{ background:var(--emerald); }
+
 /* ============ TIMELINE ============ */
 #timeline .sec-label{ color:var(--rose); }
 .tl{ position:relative; padding-left:2rem; }
@@ -664,6 +690,31 @@ footer{ padding-block:2.2rem; }
       <h2>Technology stacks managed — click to know more</h2>
     </div>
     <div class="tech-grid reveal" id="tech-grid"></div>
+  </div>
+</section>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>Career summary</h2>
+    </div>
+    <div class="glass glass-3d summary-box reveal">
+      <p class="summary-lead">26+ years of building and scaling global Engineering and Delivery organizations — leading teams to surpass Product, Engineering, Delivery, Business, Operations and Customer KPIs by strategically leveraging business and technology acumen, industry best practices, process improvement, people capability, a performance-driven work culture, continuous improvement, and consistent innovation.</p>
+      <ul class="sum-points">
+        <li><strong>C-suite partnership</strong> — 12+ years reporting to C-suite leaders on offshore strategy, annual/quarterly planning, forecasting and KPI reporting; builds trust across cultures and time zones with customers, partners, and onshore/offshore teams.</li>
+        <li><strong>Board-level ownership</strong> — served on Board with responsibility for recruiting, processes &amp; policies, India site, HR, L&amp;D, legal, finance, payroll, compliance, P&amp;L, budgets, vendor management, and comp &amp; benefits.</li>
+        <li><strong>GCC builder</strong> — 3 GCCs set up from scratch across India and the Philippines; 100+ projects transitioned offshore; end-to-end engineering and delivery processes implemented.</li>
+        <li><strong>Scale</strong> — grew Jet2's GCC from 67 to 450+ in 30 months; hired 10+ senior leaders and 20+ engineering managers; built L&amp;D, Data Engineering, Data Science &amp; ML-Ops, Digital Analytics and RPA teams from scratch while modernizing the e-commerce and mobile platforms.</li>
+        <li><strong>Commercial ownership</strong> — $80M revenue portfolio, $30M single account, £4.4M GCC budget; $450K cost savings in FY19; $750K/year subcontractor partnership managed.</li>
+        <li><strong>End-to-end lifecycle</strong> — SaaS/PaaS enterprise products on-premises and in cloud, delivered with PMP/ITIL/Agile within timelines and budgets — hands-on from product ideation and roadmap prioritization through delivery, working with Product and BA teams on Scrum.</li>
+        <li><strong>Data &amp; AI results</strong> — Data Engineering and Data Science teams built ground-up; 9+ ML models generating over £5M in additional revenue; Gen-AI smart search on Jet2's e-commerce platform; MCP-based integration and AI Governance at Onit, including the SLM-based product Olava.</li>
+        <li><strong>AI-first culture</strong> — hands-on with Claude Code, Claude Cowork, n8n and Cursor; AI-based estimation, agentic Agile management, AI-assisted TDD and clean coding, AI QA automation, documentation-as-we-build; AI-powered data migration that cut a 6-month process to 3 weeks.</li>
+        <li><strong>Conversational-AI foundation</strong> — employee #1 at Nuance India; built a 120+ person professional services org for AI/ML conversational IVR and voice-enabled apps on Azure, serving global enterprise customers.</li>
+        <li><strong>Customer &amp; operational excellence</strong> — QA sign-off and UAT processes, Agile adoption, resourcing and hiring strategy, cost optimization, delivery dashboards, automation, budget management, ESAT, and vendor onboarding across NDAs, MSAs and ARs.</li>
+        <li><strong>Innovation engine</strong> — hackathons, Copilot and Gen-AI adoption, NLP/ML, RPA, Power Platform, low/no-code, QA automation, TDD, shift-left, process audits and skill matrices to drive efficiency.</li>
+        <li><strong>Culture &amp; retention</strong> — performance-driven yet employee-centric "One Team" ethos; 20+ leaders groomed over 10 years; attrition below 5% throughout; 100% SLA adherence in 24/7 managed services on Kanban/ITIL SOPs.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
