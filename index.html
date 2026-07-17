@@ -123,6 +123,7 @@ button{ font-family:inherit; }
 }
 .nav-cta:hover, .nav-cta:focus-visible{ filter:brightness(1.12); transform:translateY(-1px); }
 @media (min-width: 960px){ .nav-links{ display:flex; } }
+@media (min-width:960px) and (max-width:1280px){ .nav-links a{ font-size:0.92rem; padding-inline:0.65em; } .nav-cta{ font-size:0.9rem; } }
 
 /* ============ HERO ============ */
 .hero{ position:relative; padding-block:clamp(4.5rem,10vw,7.5rem) 3.5rem; overflow:clip; }
@@ -369,6 +370,44 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
 .modal-close:hover, .modal-close:focus-visible{ color:var(--cyan); border-color:var(--cyan); transform:rotate(90deg); }
 .modal .detail-head{ padding-right:2.5rem; }
 
+/* ============ TESTIMONIALS ============ */
+.testi-grid{ display:grid; gap:1.2rem; grid-template-columns:1fr; align-items:start; perspective:1400px; }
+@media (min-width:700px){ .testi-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1080px){ .testi-grid{ grid-template-columns:repeat(3,1fr); } }
+.testi-card{
+  position:relative;
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-lg);
+  background:linear-gradient(160deg, rgba(21,26,44,0.55), rgba(15,19,34,0.65));
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow-card);
+  padding:1.7rem 1.6rem 1.5rem;
+  overflow:hidden;
+}
+.testi-card:nth-child(5n+1){ --hue:var(--violet); }
+.testi-card:nth-child(5n+2){ --hue:var(--cyan); }
+.testi-card:nth-child(5n+3){ --hue:var(--amber); }
+.testi-card:nth-child(5n+4){ --hue:var(--rose); }
+.testi-card:nth-child(5n+5){ --hue:var(--emerald); }
+.testi-card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--hue), transparent);
+  opacity:0.8;
+}
+.testi-mark{
+  font-family:Georgia, serif; font-size:2.6rem; line-height:1;
+  color:var(--hue); opacity:0.65; display:block; margin-bottom:0.4rem;
+}
+.testi-quote{ font-size:0.94rem; color:var(--ink-dim); margin-bottom:1.2rem; }
+.testi-name{ font-weight:700; font-size:0.98rem; }
+.testi-role{ font-size:0.8rem; color:var(--ink-faint); margin-top:0.15rem; }
+.testi-rel{
+  display:inline-block; margin-top:0.7rem;
+  font-family:var(--font-mono); font-size:0.66rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase;
+  color:var(--hue); border:1px solid color-mix(in srgb, var(--hue) 40%, transparent);
+  padding:0.35em 0.8em; border-radius:var(--r-pill);
+}
+
 /* ============ BACK TO TOP ============ */
 .backtop-wrap{ display:flex; justify-content:center; padding:1rem 0 2.5rem; }
 .backtop{
@@ -543,6 +582,7 @@ footer{ padding-block:2.2rem; }
         <a href="#tech">Technology</a>
         <a href="#timeline">Timeline</a>
         <a href="#companies">Companies</a>
+        <a href="#testimonials">Testimonials</a>
         <a class="nav-dl" href="https://naval2k.github.io/Naval-Mahendrakar-CV.pdf" download="Naval-Mahendrakar-CV.pdf">Download CV</a>
       </nav>
       <a class="nav-cta" href="#contact">Contact Details</a>
@@ -669,6 +709,15 @@ footer{ padding-block:2.2rem; }
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>Testimonials — straight from LinkedIn</h2>
+    </div>
+    <div class="testi-grid" id="testi-grid"></div>
   </div>
 </section>
 
@@ -954,6 +1003,42 @@ footer{ padding-block:2.2rem; }
     techBtns.push(b);
     addTilt(b, 6);
   });
+  /* ---------- TESTIMONIALS ---------- */
+  var testimonials = [
+    {name:'Sangamesh Mangalgi', role:'CEO — Magnify Nation', rel:'Worked with Naval', date:'Apr 2025',
+      quote:"Naval's remarkable strengths lie in his exceptional technical expertise, problem-solving mindset, and cooperative demeanor. His unrelenting zeal for learning and mastering new concepts truly sets him apart as a valuable asset in any professional environment."},
+    {name:'Saika Altaf', role:'Software Engineer — Avaya', rel:'Mentored by Naval', date:'Jan 2021',
+      quote:"Naval Sir is a great mentor and working with him is a lifetime experience. I have learnt so much from him. He is always there to guide you and he makes sure that you outshine in what you do."},
+    {name:'Bharath Kumar', role:'Technical Support Manager · PMP®', rel:'Reported to Naval', date:'Jun 2020',
+      quote:"Naval is one of my inspirations at work. He is excellent at effortlessly putting information in writing and convey to the group. He recognizes the value of people with different skills, avoids bias, and preserves self-esteem. Thanks for being my inspiration and always extending your help."},
+    {name:'Rashika Indoria', role:'Senior Software Test Engineer — Wipro', rel:'Reported to Naval', date:'Jun 2019',
+      quote:"I was working with Naval in Nuance around a year. He was the director of my team there. He is really good in his work, he is technically sound and whenever I was having issues in the project or management he was there to help me out every time. His IT experience was always helpful in case of any problem."},
+    {name:'Amit Nirmal', role:'PMP · ACP · SIAM · ITIL', rel:'Reported to Naval', date:'Apr 2013',
+      quote:"Though many claim, only few possess the skills that an IT professional should actually have. Naval happens to be one among those. An implicate understanding of business, processes, customer pulse and technical skills make him a must have for IT/Telecom/Software industry. He knows how to keep calm in critical situations while working on solution simultaneously. Wonderful people management skill and ability to communicate thoughts across in clear and logical way makes him perfect for a management role."},
+    {name:'Mohammed Ayubi', role:'Solution Design Consultant · UCaaS / CCaaS', rel:'Mentored by Naval', date:'Jun 2011',
+      quote:"Naval is one of the people who helped me the most during my training at Avaya and has been a great mentor. He is highly professional with his work and his team members. I have learned a lot while working with him."},
+    {name:'Abhijit Bhadre', role:'Cloud Architect, Azure — Avanade', rel:'Reported to Naval', date:'Jun 2011',
+      quote:"Naval is a highly motivated lead with the ability to achieve excellent results. He is a dedicated and committed professional, always willing to help people, and above all he has excellent interpersonal skills. With his skills and experience he is adding value to the success and growth of the organization."},
+    {name:'Shreekumar Acharya', role:'IT Infrastructure Leader · ITSM', rel:'Same team as Naval', date:'Jun 2011',
+      quote:"Naval is a highly-organized and motivated lead with a proven ability to deliver complex and challenging projects in a matrix environment. He is process oriented with huge knowledge — straightforward, proactive and equipped with excellent technical knowledge. He's got an extraordinary sense of finding out hidden qualities in a person and utilizing those in the appropriate way."},
+    {name:'Dhananjay Borde', role:'Technology Delivery Leader — Cybersecurity, Network & Cloud', rel:"Naval's manager", date:'Dec 2010',
+      quote:"Naval was an asset to the Service Operations and Projects wing. The team under him and the clients handled by him would count on his technical knowhow, tenacity and enthusiasm to solve any problem, both technical and non-technical. His greatest strength remains his attitude and willingness to give his best to any job entrusted to him — even if it means sailing in uncharted waters!"}
+  ];
+
+  var testiGrid = document.getElementById('testi-grid');
+  testimonials.forEach(function(t){
+    var card = document.createElement('article');
+    card.className = 'testi-card';
+    var mark = document.createElement('span'); mark.className = 'testi-mark'; mark.setAttribute('aria-hidden','true'); mark.textContent = '“';
+    var q = document.createElement('p'); q.className = 'testi-quote'; q.textContent = t.quote;
+    var nm = document.createElement('div'); nm.className = 'testi-name'; nm.textContent = t.name;
+    var role = document.createElement('div'); role.className = 'testi-role'; role.textContent = t.role;
+    var rel = document.createElement('span'); rel.className = 'testi-rel'; rel.textContent = t.rel + ' · ' + t.date;
+    card.appendChild(mark); card.appendChild(q); card.appendChild(nm); card.appendChild(role); card.appendChild(rel);
+    testiGrid.appendChild(card);
+    addTilt(card, 4);
+  });
+
   /* ---------- BACK TO TOP ---------- */
   document.getElementById('backtop').addEventListener('click', function(e){
     e.preventDefault();
