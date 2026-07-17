@@ -329,7 +329,7 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
   box-shadow:var(--shadow-card);
   padding:clamp(1.5rem,3vw,2.2rem);
 }
-#skilldeep{ scroll-margin-top:4.5rem; }
+#skilldeep, #techdeep{ scroll-margin-top:4.5rem; }
 .skilldeep-back{ display:flex; justify-content:center; margin-top:1.6rem; }
 .detail-head{ display:flex; flex-wrap:wrap; align-items:center; gap:0.7rem 1.2rem; margin-bottom:1.4rem; padding-bottom:1.2rem; border-bottom:1px solid var(--line); }
 .detail-head h3{ font-size:1.35rem; }
@@ -585,7 +585,6 @@ footer{ padding-block:2.2rem; }
       <h2>Technology stacks managed — click to know more</h2>
     </div>
     <div class="tech-grid reveal" id="tech-grid"></div>
-    <div class="tech-detail reveal" id="tech-detail"></div>
   </div>
 </section>
 
@@ -635,6 +634,18 @@ footer{ padding-block:2.2rem; }
     <div class="skill-detail" id="skill-detail"></div>
     <div class="skilldeep-back">
       <a class="btn btn-ghost" href="#skills">← Back to Skills — pick another</a>
+    </div>
+  </div>
+</section>
+
+<section id="techdeep">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>Technology deep-dive</h2>
+    </div>
+    <div class="tech-detail" id="tech-detail"></div>
+    <div class="skilldeep-back">
+      <a class="btn btn-ghost" href="#tech">← Back to Technology — pick another</a>
     </div>
   </div>
 </section>
@@ -890,7 +901,7 @@ footer{ padding-block:2.2rem; }
       techBtns.forEach(function(x){ x.classList.remove('active'); });
       b.classList.add('active');
       renderEvidence(techDetail, {name:t.cat, metric:t.items.length + ' technologies', evidence:t.evidence});
-      techDetail.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'nearest'});
+      document.getElementById('techdeep').scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
     });
     techGrid.appendChild(b);
     techBtns.push(b);
