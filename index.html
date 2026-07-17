@@ -467,28 +467,25 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
 .back-top:hover{ color:var(--emerald); }
 
 /* ============ CONTACT ============ */
-.contact-card{
-  position:relative; overflow:hidden;
-  border-radius:clamp(20px,3vw,32px);
-  border:1px solid var(--line-strong);
-  background:linear-gradient(150deg, rgba(139,124,248,0.12), rgba(76,201,232,0.07) 55%, var(--bg-2));
-  box-shadow:var(--shadow-deep);
-  padding:clamp(2.2rem,6vw,4.2rem);
-  display:grid; gap:2.2rem; align-items:end;
+.contact-box{ margin-bottom:0; }
+.contact-grid2{ display:grid; gap:1.6rem; grid-template-columns:1fr; text-align:center; }
+@media (min-width:560px){ .contact-grid2{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1000px){ .contact-grid2{ grid-template-columns:repeat(4,1fr); } }
+.citem{ display:flex; flex-direction:column; gap:0.35rem; align-items:center; }
+.clabel{
+  font-family:var(--font-mono); font-size:0.7rem; font-weight:700;
+  letter-spacing:0.14em; text-transform:uppercase;
 }
-@media (min-width:860px){ .contact-card{ grid-template-columns:1.5fr 1fr; } }
-.contact-card h2{ font-size:clamp(2rem,4.6vw,3.2rem); margin-bottom:1rem; }
-.contact-lead{ color:var(--ink-dim); font-size:1.05rem; max-width:52ch; margin-bottom:1.7rem; }
-.contact-links{ display:flex; flex-wrap:wrap; gap:0.8rem; }
-.contact-meta{
-  border:1px solid var(--line);
-  background:rgba(11,14,25,0.5);
-  border-radius:var(--r-md);
-  padding:1.5rem;
-  font-size:0.85rem; color:var(--ink-dim);
-  display:flex; flex-direction:column; gap:0.65rem;
+.citem:nth-child(1) .clabel{ color:var(--violet); }
+.citem:nth-child(2) .clabel{ color:var(--cyan); }
+.citem:nth-child(3) .clabel{ color:var(--emerald); }
+.citem:nth-child(4) .clabel{ color:var(--rose); }
+.cvalue{
+  font-size:1rem; font-weight:600; color:var(--ink);
+  text-decoration:none; word-break:break-word;
 }
-.contact-meta strong{ color:var(--ink); }
+a.cvalue{ border-bottom:1px dashed var(--line-strong); padding-bottom:0.15em; transition:color 0.2s, border-color 0.2s; }
+a.cvalue:hover, a.cvalue:focus-visible{ color:var(--cyan); border-color:var(--cyan); }
 footer{ padding-block:2.2rem; }
 .footer-inner{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-faint); }
 
@@ -608,19 +605,27 @@ footer{ padding-block:2.2rem; }
 
 <section id="contact">
   <div class="wrap">
-    <div class="contact-card reveal">
-      <div>
-        <h2>Let's talk about the org you're trying to build.</h2>
-        <p class="contact-lead">Open to Delivery, GCC, and Engineering Leadership conversations — especially where AI-driven transformation and P&amp;L ownership meet.</p>
-        <div class="contact-links">
-          <a class="btn btn-primary" href="mailto:Naval.Mahendrakar@gmail.com">Email me</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/navalkishor-mahendrakar-b84a3114/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+    <div class="section-head compact reveal">
+      <h2>Contact details</h2>
+    </div>
+    <div class="glass glass-3d contact-box reveal">
+      <div class="contact-grid2">
+        <div class="citem">
+          <span class="clabel">Phone</span>
+          <a class="cvalue" href="tel:+919096573669">+91 90965 73669</a>
         </div>
-      </div>
-      <div class="contact-meta">
-        <div><strong>Location</strong> — Pune, India (GCC &amp; global remote)</div>
-        <div><strong>Focus</strong> — Delivery Leadership · GCC Build · AI-Native Transformation</div>
-        <div><strong>Certifications</strong> — PMP · ITIL Expert · CSM · Agile · CCNA</div>
+        <div class="citem">
+          <span class="clabel">Email</span>
+          <a class="cvalue" href="mailto:Naval.Mahendrakar@gmail.com">Naval.Mahendrakar@gmail.com</a>
+        </div>
+        <div class="citem">
+          <span class="clabel">LinkedIn</span>
+          <a class="cvalue" href="https://www.linkedin.com/in/navalkishor-mahendrakar-b84a3114/" target="_blank" rel="noopener noreferrer">navalkishor-mahendrakar</a>
+        </div>
+        <div class="citem">
+          <span class="clabel">Location</span>
+          <span class="cvalue">Pune, India</span>
+        </div>
       </div>
     </div>
   </div>
