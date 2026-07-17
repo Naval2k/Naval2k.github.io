@@ -597,6 +597,18 @@ a.cvalue:hover, a.cvalue:focus-visible{ color:var(--cyan); border-color:var(--cy
 footer{ padding-block:2.2rem; }
 .footer-inner{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-faint); }
 
+/* ============ PRINT ============ */
+@media print{
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  html, body{ background:#0B0E19 !important; }
+  .reveal{ opacity:1 !important; transform:none !important; }
+  .nav-shell, .goback, .backtop-wrap, .modal-overlay, .hero-glow, .hero-grid-lines{ display:none !important; }
+  .tilt{ transform:none !important; }
+  section{ padding-block:2rem; }
+  .hero{ padding-block:1.5rem 1rem; }
+  .num-card, .skill-card, .tech-card, .co-card, .testi-card, .glass{ break-inside:avoid; }
+  .hero-photo{ display:block; position:static; float:right; height:300px; margin:0 0 1rem 1.5rem; }
+}
 </style>
 </head>
 <body>
@@ -1088,6 +1100,14 @@ footer{ padding-block:2.2rem; }
     card.appendChild(mark); card.appendChild(q); card.appendChild(nm); card.appendChild(role); card.appendChild(rel);
     testiGrid.appendChild(card);
     addTilt(card, 4);
+  });
+
+  /* ---------- PRINT: finalize counters & reveals ---------- */
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('.num-value').forEach(function(el){
+      el.textContent = el.getAttribute('data-prefix') + el.getAttribute('data-num') + el.getAttribute('data-suffix');
+    });
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   });
 
   /* ---------- FLOATING GO BACK ---------- */
