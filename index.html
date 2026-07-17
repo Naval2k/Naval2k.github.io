@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Navalkishor Mahendrakar — Delivery &amp; Engineering Leadership</title>
+<meta name="description" content="0 → 450+ people. 3 GCCs. $80M P&L. 26 years building global delivery organizations that ship, scale, and stay profitable." />
+<style>
+
+/* ============ TOKENS — deep-space multi-hue system ============ */
+:root{
+  --bg:#0B0E19;
+  --bg-2:#0F1322;
+  --surface:#151A2C;
+  --surface-2:#1B2138;
+  --ink:#EAEDF9;
+  --ink-dim:#9AA3C4;
+  --ink-faint:#5E6788;
+  --line:rgba(234,237,249,0.07);
+  --line-strong:rgba(234,237,249,0.14);
+
+  /* section hues */
+  --violet:#8B7CF8;
+  --violet-soft:rgba(139,124,248,0.14);
+  --cyan:#4CC9E8;
+  --cyan-soft:rgba(76,201,232,0.13);
+  --amber:#F0B254;
+  --amber-soft:rgba(240,178,84,0.13);
+  --rose:#F07BA4;
+  --rose-soft:rgba(240,123,164,0.13);
+  --emerald:#4ED8A2;
+  --emerald-soft:rgba(78,216,162,0.13);
+
+  --shadow-card:0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 50px rgba(0,0,0,0.5);
+  --shadow-deep:0 1px 0 rgba(255,255,255,0.06) inset, 0 30px 80px rgba(0,0,0,0.6);
+
+  --font-display:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  --font-body:'Segoe UI Variable Text','Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,'Cascadia Code','SF Mono',Consolas,'Roboto Mono',monospace;
+
+  --container:1340px;
+  --r-lg:20px;
+  --r-md:14px;
+  --r-pill:100px;
+}
+
+/* ============ RESET / BASE ============ */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; } }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{ color:inherit; }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:800; margin:0; text-wrap:balance; letter-spacing:-0.02em; }
+p{ margin:0; }
+button{ font-family:inherit; }
+::selection{ background:var(--violet); color:#0B0E19; }
+:focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; border-radius:4px; }
+
+.wrap{ max-width:var(--container); margin:0 auto; padding-inline:clamp(1.25rem,4vw,2.5rem); }
+.mono{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; }
+
+/* section label */
+.sec-label{
+  display:inline-flex; align-items:center; gap:0.6em;
+  font-family:var(--font-mono);
+  font-size:0.72rem; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase;
+}
+.sec-label .idx{ opacity:0.55; }
+.sec-label::after{ content:""; width:44px; height:1px; background:currentColor; opacity:0.4; }
+
+/* ============ REVEAL ============ */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; } }
+
+/* ============ 3D TILT ============ */
+.tilt{ transform-style:preserve-3d; will-change:transform; transition:transform 0.35s ease, box-shadow 0.35s ease; }
+.tilt > *{ transform:translateZ(24px); }
+
+/* ============ NAV ============ */
+.nav-shell{ position:sticky; top:0.9rem; z-index:60; pointer-events:none; }
+.nav{
+  pointer-events:auto;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  background:rgba(21,26,44,0.72);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-pill);
+  padding:0.5rem 0.6rem 0.5rem 1.3rem;
+  box-shadow:0 14px 40px rgba(0,0,0,0.45);
+}
+.nav-name{ font-weight:700; font-size:0.92rem; white-space:nowrap; }
+.nav-name .dot{ color:var(--violet); }
+.nav-links{ display:none; gap:0.15rem; }
+.nav-links a{
+  text-decoration:none; font-size:0.83rem; font-weight:600; color:var(--ink-dim);
+  padding:0.48em 0.9em; border-radius:var(--r-pill);
+  transition:background 0.2s, color 0.2s;
+}
+.nav-links a:hover, .nav-links a:focus-visible{ background:var(--violet-soft); color:var(--ink); }
+.nav-cta{
+  text-decoration:none; font-size:0.83rem; font-weight:700;
+  background:linear-gradient(120deg, var(--violet), #6A8DF8);
+  color:#0B0E19;
+  padding:0.6em 1.25em; border-radius:var(--r-pill);
+  white-space:nowrap;
+  transition:filter 0.2s, transform 0.2s;
+}
+.nav-cta:hover, .nav-cta:focus-visible{ filter:brightness(1.12); transform:translateY(-1px); }
+@media (min-width: 960px){ .nav-links{ display:flex; } }
+
+/* ============ HERO ============ */
+.hero{ position:relative; padding-block:clamp(4.5rem,10vw,7.5rem) 3.5rem; overflow:clip; }
+.hero-glow{ position:absolute; inset:0; pointer-events:none; z-index:-1; }
+.glow{ position:absolute; border-radius:50%; filter:blur(90px); }
+.glow-1{ width:560px; height:560px; background:rgba(139,124,248,0.16); top:-220px; right:-120px; }
+.glow-2{ width:420px; height:420px; background:rgba(76,201,232,0.10); bottom:-180px; left:-140px; }
+.glow-3{ width:300px; height:300px; background:rgba(240,123,164,0.08); top:36%; left:44%; }
+.hero-grid-lines{
+  position:absolute; inset:0; z-index:-1; opacity:0.5;
+  background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
+}
+
+.hero-kicker{
+  font-family:var(--font-mono); font-size:0.78rem; font-weight:600;
+  letter-spacing:0.18em; text-transform:uppercase; color:var(--cyan);
+  margin-bottom:1.6rem;
+  display:flex; align-items:center; gap:0.7em;
+}
+.hero-kicker::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 14px var(--cyan); }
+.hero h1{
+  font-size:clamp(1.3rem,2.1vw,1.8rem);
+  line-height:1.3;
+  margin-bottom:1.8rem;
+  letter-spacing:-0.015em;
+  font-weight:750;
+}
+.hero h1 .hl-violet{ color:var(--violet); }
+.hero h1 .hl-cyan{ color:var(--cyan); }
+.hero h1 .hl-amber{ color:var(--amber); }
+.hero-tagline{
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem,2.1vw,1.8rem); font-weight:750; color:var(--ink);
+  line-height:1.3; letter-spacing:-0.015em; text-wrap:balance;
+  margin:-1rem 0 1.8rem;
+}
+.hero-tagline .hl-amber{ color:var(--amber); }
+
+/* hero box — everything about the profile lives in one card */
+.hero-box{
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-lg);
+  background:linear-gradient(160deg, rgba(21,26,44,0.92), rgba(15,19,34,0.92));
+  box-shadow:var(--shadow-card);
+  padding:clamp(1.5rem,3vw,2.4rem);
+}
+.hero-strip{
+  display:flex; flex-wrap:wrap; align-items:center; gap:0.3em 0.65em;
+  font-size:0.94rem; font-weight:600; color:var(--ink);
+  margin-bottom:1.1rem;
+}
+.hero-strip .bar{ color:var(--ink-faint); font-weight:400; }
+.hero-lead{ max-width:88ch; font-size:0.98rem; color:var(--ink-dim); margin-bottom:1.6rem; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:0.8rem; margin-bottom:2rem; }
+.hero-box .profile-console{
+  border:0; border-top:1px solid var(--line);
+  border-radius:0; background:transparent; box-shadow:none;
+  padding:1.8rem 0 0;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:0.55em;
+  font-size:0.93rem; font-weight:700;
+  text-decoration:none; cursor:pointer;
+  padding:0.85em 1.65em;
+  border-radius:var(--r-pill);
+  border:1px solid transparent;
+  transition:transform 0.2s, filter 0.2s, background 0.2s, border-color 0.2s;
+}
+.btn-primary{
+  background:linear-gradient(120deg, var(--violet), #6A8DF8);
+  color:#0B0E19;
+  box-shadow:0 12px 34px rgba(139,124,248,0.35);
+}
+.btn-primary:hover, .btn-primary:focus-visible{ filter:brightness(1.12); transform:translateY(-2px); }
+.btn-ghost{ background:var(--surface); color:var(--ink); border-color:var(--line-strong); }
+.btn-ghost:hover, .btn-ghost:focus-visible{ border-color:var(--violet); transform:translateY(-2px); }
+
+/* profile console */
+.profile-console{
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-lg);
+  background:linear-gradient(160deg, rgba(21,26,44,0.9), rgba(15,19,34,0.9));
+  box-shadow:var(--shadow-card);
+  padding:clamp(1.4rem,3vw,2rem);
+  display:grid; gap:1.4rem;
+}
+@media (min-width:880px){ .profile-console{ grid-template-columns:1.1fr 1.6fr; } }
+.profile-col h3{
+  font-family:var(--font-mono); font-size:0.7rem; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-faint);
+  margin-bottom:0.9rem;
+}
+.profile-rows{ display:flex; flex-direction:column; gap:0.65rem; font-size:1rem; }
+.profile-rows .row{ display:flex; gap:0.8em; align-items:baseline; }
+.profile-rows .k{
+  color:var(--violet); font-family:var(--font-mono); font-size:0.7rem; font-weight:700;
+  letter-spacing:0.12em; min-width:8.5ch; flex:none;
+}
+.profile-rows .v{ color:var(--ink); font-weight:500; }
+.cert-chips{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+.chip{
+  font-family:var(--font-body); font-size:0.84rem; font-weight:600; letter-spacing:0.01em;
+  padding:0.5em 1em; border-radius:var(--r-pill);
+  border:1px solid var(--line-strong);
+  color:var(--ink-dim);
+  background:rgba(234,237,249,0.03);
+  transition:border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.chip:hover{ transform:translateY(-2px); }
+.chip.c-violet{ border-color:rgba(139,124,248,0.45); color:var(--violet); }
+.chip.c-cyan{ border-color:rgba(76,201,232,0.45); color:var(--cyan); }
+.chip.c-amber{ border-color:rgba(240,178,84,0.45); color:var(--amber); }
+.chip.c-emerald{ border-color:rgba(78,216,162,0.45); color:var(--emerald); }
+.chip.c-rose{ border-color:rgba(240,123,164,0.45); color:var(--rose); }
+
+/* ============ SECTIONS ============ */
+section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
+.section-head{ display:flex; flex-direction:column; align-items:flex-start; gap:1rem; margin-bottom:2.8rem; max-width:72ch; }
+.section-head h2{ font-size:clamp(1.9rem,4vw,3rem); }
+.section-head p{ color:var(--ink-dim); font-size:1.04rem; }
+
+/* ============ NUMBERS ============ */
+#numbers .sec-label{ color:var(--violet); }
+.num-grid{ display:grid; gap:1rem; grid-template-columns:repeat(2,1fr); perspective:1200px; }
+@media (min-width:700px){ .num-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (min-width:1000px){ .num-grid{ grid-template-columns:repeat(4,1fr); } }
+.num-card{
+  position:relative;
+  border-radius:var(--r-md);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(160deg, var(--surface), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  padding:1.5rem 1.4rem 1.35rem;
+  overflow:hidden;
+}
+.num-card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--hue,#8B7CF8), transparent);
+  opacity:0.85;
+}
+.num-card::after{
+  content:""; position:absolute; width:130px; height:130px; border-radius:50%;
+  background:var(--hue,#8B7CF8); opacity:0.09; filter:blur(40px);
+  top:-40px; right:-30px; pointer-events:none;
+}
+.num-value{
+  font-family:var(--font-display);
+  font-size:clamp(1.8rem,3.4vw,2.5rem);
+  font-weight:800; letter-spacing:-0.03em;
+  color:var(--hue,#8B7CF8);
+  font-variant-numeric:tabular-nums;
+}
+.num-label{ font-size:0.84rem; color:var(--ink-dim); line-height:1.4; margin-top:0.3rem; }
+
+/* ============ SKILLS ============ */
+#skills .sec-label{ color:var(--cyan); }
+.skills-grid{ display:grid; gap:1rem; grid-template-columns:1fr; perspective:1200px; margin-bottom:1.6rem; }
+@media (min-width:640px){ .skills-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1000px){ .skills-grid{ grid-template-columns:repeat(3,1fr); } }
+.skill-card{
+  position:relative; text-align:left; width:100%;
+  border-radius:var(--r-md);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(160deg, var(--surface), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  padding:1.5rem 1.5rem 1.4rem;
+  cursor:pointer;
+  color:var(--ink);
+  overflow:hidden;
+}
+.skill-card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity:0; transition:opacity 0.25s;
+}
+.skill-card:hover::before, .skill-card.active::before{ opacity:0.9; }
+.skill-card.active{ border-color:rgba(76,201,232,0.5); }
+.skill-name{ font-size:1.06rem; font-weight:700; margin-bottom:0.35rem; display:flex; align-items:center; justify-content:space-between; gap:0.6em; }
+.skill-name .more{
+  font-family:var(--font-mono); font-size:0.68rem; font-weight:600; letter-spacing:0.08em;
+  color:var(--cyan); opacity:0; transition:opacity 0.25s; flex:none;
+}
+.skill-card:hover .more, .skill-card.active .more{ opacity:1; }
+.skill-metric{ font-family:var(--font-mono); font-size:0.8rem; color:var(--cyan); }
+.skill-detail{
+  border-radius:var(--r-lg);
+  border:1px solid rgba(76,201,232,0.3);
+  background:linear-gradient(160deg, rgba(76,201,232,0.06), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  padding:clamp(1.5rem,3vw,2.2rem);
+}
+.detail-head{ display:flex; flex-wrap:wrap; align-items:center; gap:0.7rem 1.2rem; margin-bottom:1.4rem; padding-bottom:1.2rem; border-bottom:1px solid var(--line); }
+.detail-head h3{ font-size:1.35rem; }
+.detail-badge{
+  font-family:var(--font-mono); font-size:0.76rem; font-weight:700;
+  color:#0B0E19; background:var(--cyan);
+  padding:0.4em 1em; border-radius:var(--r-pill);
+}
+.detail-note{ font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-faint); margin-left:auto; }
+.evidence-list{ display:flex; flex-direction:column; gap:1.3rem; }
+.evidence-item{ display:grid; grid-template-columns:1fr; gap:0.3rem; }
+@media (min-width:640px){ .evidence-item{ grid-template-columns:190px 1fr; gap:1.5rem; } }
+.evidence-source{ font-weight:700; font-size:0.92rem; color:var(--cyan); }
+.evidence-period{ display:block; font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-faint); margin-top:0.2rem; }
+.evidence-text{ color:var(--ink-dim); font-size:0.95rem; }
+
+/* ============ TECH ============ */
+#tech .sec-label{ color:var(--amber); }
+.tech-grid{ display:grid; gap:1rem; grid-template-columns:1fr; perspective:1200px; margin-bottom:1.6rem; }
+@media (min-width:620px){ .tech-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:980px){ .tech-grid{ grid-template-columns:repeat(3,1fr); } }
+.tech-card{
+  position:relative; text-align:left; width:100%;
+  border-radius:var(--r-md);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(160deg, var(--surface), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  padding:1.4rem 1.5rem;
+  cursor:pointer; color:var(--ink);
+  overflow:hidden;
+}
+.tech-card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--amber), transparent);
+  opacity:0; transition:opacity 0.25s;
+}
+.tech-card:hover::before, .tech-card.active::before{ opacity:0.9; }
+.tech-card.active{ border-color:rgba(240,178,84,0.5); }
+.tech-cat{ font-size:1rem; font-weight:700; margin-bottom:0.55rem; display:flex; justify-content:space-between; align-items:center; gap:0.6em; }
+.tech-cat .more{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em; color:var(--amber); opacity:0; transition:opacity 0.25s; flex:none; }
+.tech-card:hover .more, .tech-card.active .more{ opacity:1; }
+.tech-items{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+.titem{
+  font-family:var(--font-mono); font-size:0.74rem;
+  color:var(--ink-dim); border:1px solid var(--line);
+  padding:0.32em 0.7em; border-radius:var(--r-pill);
+  background:rgba(234,237,249,0.02);
+}
+.tech-detail{
+  border-radius:var(--r-lg);
+  border:1px solid rgba(240,178,84,0.3);
+  background:linear-gradient(160deg, rgba(240,178,84,0.06), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  padding:clamp(1.5rem,3vw,2.2rem);
+}
+.tech-detail .detail-badge{ background:var(--amber); }
+.tech-detail .evidence-source{ color:var(--amber); }
+
+/* ============ TIMELINE ============ */
+#timeline .sec-label{ color:var(--rose); }
+.tl{ position:relative; padding-left:2rem; }
+.tl::before{
+  content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
+  background:linear-gradient(180deg, var(--rose), var(--violet) 55%, var(--cyan));
+  opacity:0.5; border-radius:2px;
+}
+.tl-item{ position:relative; padding:0 0 1.4rem 1.4rem; }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-node{
+  position:absolute; left:-2rem; top:6px;
+  width:20px; height:20px; border-radius:50%;
+  border:2px solid var(--rose);
+  background:var(--bg);
+  box-shadow:0 0 12px rgba(240,123,164,0.5);
+}
+.tl-item.major .tl-node{ background:var(--rose); }
+.tl-btn{
+  display:block; width:100%; text-align:left; cursor:pointer;
+  border-radius:var(--r-md);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(160deg, var(--surface), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  color:var(--ink);
+  padding:1.15rem 1.4rem;
+  transition:border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.tl-btn:hover, .tl-btn:focus-visible{ border-color:rgba(240,123,164,0.55); transform:translateX(6px); }
+.tl-top{ display:flex; flex-wrap:wrap; align-items:baseline; gap:0.4rem 1rem; }
+.tl-co{ font-size:1.08rem; font-weight:700; }
+.tl-period{ font-family:var(--font-mono); font-size:0.75rem; color:var(--rose); }
+.tl-role{ color:var(--ink-dim); font-size:0.9rem; margin-top:0.15rem; }
+.tl-scale{ font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-faint); margin-top:0.35rem; }
+.tl-go{ font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em; color:var(--rose); opacity:0; transition:opacity 0.25s; float:right; }
+.tl-btn:hover .tl-go{ opacity:1; }
+
+/* ============ COMPANIES ============ */
+#companies .sec-label{ color:var(--emerald); }
+.co-stack{ display:flex; flex-direction:column; gap:1.4rem; perspective:1400px; }
+.co-card{
+  border-radius:var(--r-lg);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(160deg, var(--surface), var(--bg-2));
+  box-shadow:var(--shadow-card);
+  padding:clamp(1.5rem,3vw,2.2rem);
+  scroll-margin-top:6.5rem;
+  transition:border-color 0.4s, box-shadow 0.4s;
+}
+.co-card.flash{ border-color:var(--emerald); box-shadow:0 0 0 1px var(--emerald), var(--shadow-deep); }
+.co-head{ display:flex; flex-wrap:wrap; align-items:baseline; gap:0.5rem 1.2rem; margin-bottom:0.3rem; }
+.co-head h3{ font-size:1.45rem; }
+.co-period{ font-family:var(--font-mono); font-size:0.78rem; color:var(--emerald); }
+.co-role{ color:var(--ink-dim); font-weight:600; font-size:0.98rem; margin-bottom:1.1rem; }
+.co-blurb{ color:var(--ink-dim); font-size:0.95rem; margin-bottom:1.2rem; max-width:80ch; }
+.co-points{ margin:0 0 1.2rem; padding:0; list-style:none; display:grid; gap:0.55rem; }
+@media (min-width:880px){ .co-points{ grid-template-columns:1fr 1fr; column-gap:2rem; } }
+.co-points li{
+  position:relative; padding-left:1.3em;
+  color:var(--ink); font-size:0.93rem; line-height:1.5;
+}
+.co-points li::before{
+  content:""; position:absolute; left:0; top:0.52em;
+  width:7px; height:7px; border-radius:2px;
+  background:var(--emerald); opacity:0.85;
+  transform:rotate(45deg);
+}
+.co-tech{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+.co-tech .titem{ font-size:0.7rem; }
+.back-top{
+  display:inline-block; margin-top:1.1rem;
+  font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.06em;
+  color:var(--ink-faint); text-decoration:none;
+  border-bottom:1px dashed var(--line-strong);
+  transition:color 0.2s;
+}
+.back-top:hover{ color:var(--emerald); }
+
+/* ============ CONTACT ============ */
+.contact-card{
+  position:relative; overflow:hidden;
+  border-radius:clamp(20px,3vw,32px);
+  border:1px solid var(--line-strong);
+  background:linear-gradient(150deg, rgba(139,124,248,0.12), rgba(76,201,232,0.07) 55%, var(--bg-2));
+  box-shadow:var(--shadow-deep);
+  padding:clamp(2.2rem,6vw,4.2rem);
+  display:grid; gap:2.2rem; align-items:end;
+}
+@media (min-width:860px){ .contact-card{ grid-template-columns:1.5fr 1fr; } }
+.contact-card h2{ font-size:clamp(2rem,4.6vw,3.2rem); margin-bottom:1rem; }
+.contact-lead{ color:var(--ink-dim); font-size:1.05rem; max-width:52ch; margin-bottom:1.7rem; }
+.contact-links{ display:flex; flex-wrap:wrap; gap:0.8rem; }
+.contact-meta{
+  border:1px solid var(--line);
+  background:rgba(11,14,25,0.5);
+  border-radius:var(--r-md);
+  padding:1.5rem;
+  font-size:0.85rem; color:var(--ink-dim);
+  display:flex; flex-direction:column; gap:0.65rem;
+}
+.contact-meta strong{ color:var(--ink); }
+footer{ padding-block:2.2rem; }
+.footer-inner{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-faint); }
+
+</style>
+</head>
+<body>
+
+<div class="nav-shell">
+  <div class="wrap">
+    <div class="nav">
+      <span class="nav-name">Naval Mahendrakar<span class="dot">.</span></span>
+      <nav class="nav-links">
+        <a href="#numbers">Numbers</a>
+        <a href="#skills">Skills</a>
+        <a href="#tech">Technology</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#companies">Companies</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+  </div>
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-kicker">Navalkishor Ravindra Mahendrakar</div>
+    <h1><span class="hl-violet">25+ years</span> of leading teams building <span class="hl-cyan">enterprise-scale</span> software products and applications.</h1>
+    <p class="hero-tagline">A leader who strives for excellence by leveraging his business, technical, process and people skills — with a focus on <span class="hl-amber">AI-led innovation</span>.</p>
+
+    <div class="hero-box reveal">
+      <div class="hero-strip">
+        <span>Strategic Global Leadership</span><span class="bar">·</span>
+        <span>GCC / Delivery / Engineering Leader</span><span class="bar">·</span>
+        <span>Scaled Teams 0→450+</span><span class="bar">·</span>
+        <span>Cost, Revenue &amp; P&amp;L</span><span class="bar">·</span>
+        <span>AI-driven Business Transformation</span><span class="bar">·</span>
+        <span>IIM · Agile · PMP</span>
+      </div>
+      <p class="hero-lead">Inspiring teams to surpass Product, Engineering, Delivery, Business and Customer KPIs — by leveraging business and technology acumen, industry best practices, process improvement, people capability, and a performance-driven culture of continuous innovation.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#timeline">Explore the journey</a>
+        <a class="btn btn-ghost" href="#skills">See skills in action</a>
+      </div>
+
+    <div class="profile-console">
+      <div class="profile-col">
+        <h3>Profile</h3>
+        <div class="profile-rows">
+          <div class="row"><span class="k">BASE</span><span class="v">Pune, India — GCC &amp; global remote</span></div>
+          <div class="row"><span class="k">ROLE</span><span class="v">Director, Professional Services — Onit</span></div>
+          <div class="row"><span class="k">SPAN</span><span class="v">26+ years · 10 companies · 3 GCCs built</span></div>
+          <div class="row"><span class="k">LANG</span><span class="v">English · Hindi · Marathi</span></div>
+        </div>
+      </div>
+      <div class="profile-col">
+        <h3>Education &amp; Certifications</h3>
+        <div class="cert-chips">
+          <span class="chip c-violet">AI for Leaders — IIM-V (pursuing)</span>
+          <span class="chip c-violet">SMP — IIM Kozhikode</span>
+          <span class="chip c-violet">MBA — Symbiosis</span>
+          <span class="chip c-cyan">PMP</span>
+          <span class="chip c-cyan">ITIL Expert</span>
+          <span class="chip c-cyan">CSM · Agile</span>
+          <span class="chip c-amber">CCNA</span>
+          <span class="chip c-amber">SCCA · ACE</span>
+          <span class="chip c-emerald">B.Sc. Electronics — Shivaji University</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</header>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="sec-label"><span class="idx">01</span> The numbers</span>
+      <h2>Proof before prose.</h2>
+      <p>Every figure below is one I was directly accountable for.</p>
+    </div>
+    <div class="num-grid reveal" id="num-grid"></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="sec-label"><span class="idx">02</span> Skills &amp; strengths</span>
+      <h2>Click a strength. See it demonstrated.</h2>
+      <p>Each card opens where the skill ran, how it was used, and what it produced. More worked examples coming soon.</p>
+    </div>
+    <div class="skills-grid reveal" id="skills-grid"></div>
+    <div class="skill-detail reveal" id="skill-detail"></div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="sec-label"><span class="idx">03</span> Technology</span>
+      <h2>Stacks managed, teams led.</h2>
+      <p>Two decades of hiring, architecture reviews and delivery across these stacks. Click a category for where each ran. More examples coming soon.</p>
+    </div>
+    <div class="tech-grid reveal" id="tech-grid"></div>
+    <div class="tech-detail reveal" id="tech-detail"></div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="sec-label"><span class="idx">04</span> Career timeline</span>
+      <h2>Ten companies. One direction: up.</h2>
+      <p>Click any role to jump to the full story — scope, achievements, and the numbers behind them.</p>
+    </div>
+    <div class="tl reveal" id="tl"></div>
+  </div>
+</section>
+
+<section id="companies">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="sec-label"><span class="idx">05</span> Company deep-dives</span>
+      <h2>The full story, role by role.</h2>
+    </div>
+    <div class="co-stack" id="co-stack"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div>
+        <h2>Let's talk about the org you're trying to build.</h2>
+        <p class="contact-lead">Open to Delivery, GCC, and Engineering Leadership conversations — especially where AI-driven transformation and P&amp;L ownership meet.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:Naval.Mahendrakar@gmail.com">Email me</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/navalkishor-mahendrakar-b84a3114/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+        </div>
+      </div>
+      <div class="contact-meta">
+        <div><strong>Location</strong> — Pune, India (GCC &amp; global remote)</div>
+        <div><strong>Focus</strong> — Delivery Leadership · GCC Build · AI-Native Transformation</div>
+        <div><strong>Certifications</strong> — PMP · ITIL Expert · CSM · Agile · CCNA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Navalkishor Mahendrakar</span>
+    <span>Numbers first. People always.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- 3D TILT ---------- */
+  function addTilt(el, maxDeg){
+    if(reduceMotion) return;
+    var max = maxDeg || 7;
+    el.classList.add('tilt');
+    el.addEventListener('mousemove', function(e){
+      var r = el.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = 'perspective(900px) rotateY(' + (px*max).toFixed(2) + 'deg) rotateX(' + (-py*max).toFixed(2) + 'deg) translateY(-4px)';
+    });
+    el.addEventListener('mouseleave', function(){ el.style.transform = ''; });
+  }
+
+  /* ---------- NUMBERS ---------- */
+  var hues = ['#8B7CF8','#4CC9E8','#F0B254','#F07BA4','#4ED8A2'];
+  var nums = [
+    {num:26, prefix:'', suffix:'+', label:'Years leading global delivery'},
+    {num:450, prefix:'', suffix:'+', label:'Largest team scaled & led'},
+    {num:3, prefix:'', suffix:'', label:'GCCs built from scratch'},
+    {num:80, prefix:'$', suffix:'M', label:'Revenue portfolio managed'},
+    {num:98, prefix:'', suffix:'%', label:'Customer satisfaction sustained'},
+    {num:5, prefix:'<', suffix:'%', label:'Attrition, 16 years running'},
+    {num:5, prefix:'$', suffix:'M+', label:'Margin created via AI & data science'},
+    {num:10, prefix:'', suffix:'+', label:'AI tools productionized'},
+    {num:25, prefix:'', suffix:'+', label:'Legacy apps rewritten cloud-native'},
+    {num:83, prefix:'', suffix:'+', label:'Applications transitioned at Jet2'},
+    {num:30, prefix:'$', suffix:'M', label:'Largest single account owned'},
+    {num:18, prefix:'', suffix:'%', label:'Faster delivery using AI at Clarion'}
+  ];
+  var numGrid = document.getElementById('num-grid');
+  nums.forEach(function(k, i){
+    var card = document.createElement('div');
+    card.className = 'num-card';
+    card.style.setProperty('--hue', hues[i % hues.length]);
+    var v = document.createElement('span');
+    v.className = 'num-value';
+    v.setAttribute('data-num', k.num);
+    v.setAttribute('data-prefix', k.prefix);
+    v.setAttribute('data-suffix', k.suffix);
+    v.textContent = k.prefix + '0' + k.suffix;
+    var l = document.createElement('div');
+    l.className = 'num-label';
+    l.textContent = k.label;
+    card.appendChild(v); card.appendChild(l);
+    numGrid.appendChild(card);
+    addTilt(card, 6);
+  });
+
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-num'));
+    var prefix = el.getAttribute('data-prefix');
+    var suffix = el.getAttribute('data-suffix');
+    if(reduceMotion){ el.textContent = prefix + target + suffix; return; }
+    var start = null; var duration = 1200;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- SKILLS ---------- */
+  var skills = [
+    {name:'End-to-End Delivery Leadership', metric:'100+ projects, zero major escalations', evidence:[
+      {company:'Onit', period:'2026–Present', text:'Leading Implementation, Migration, Integration and QA for an AI-native legal SaaS suite — full CX org, end to end.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'Owned delivery for 300+ developers across 100+ projects and 100+ SMB customers spanning the Americas, Europe and Saudi.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Ran the entire India delivery function reporting to the CIO — e-commerce, mobile, data and business applications.'}
+    ]},
+    {name:'P&L & Revenue Ownership', metric:'$80M largest portfolio managed', evidence:[
+      {company:'Nuance', period:'2013–2019', text:'Owned an $80M revenue portfolio as India Center Head, including the single largest account at $30M.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Accountable end to end for a £4.4M offshore portfolio budget.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'Responsible for $15M+ revenue and full account P&L across 100+ customers.'}
+    ]},
+    {name:'GCC / India Site Leadership', metric:'3 GCCs established from scratch', evidence:[
+      {company:'Nuance', period:'2013–2019', text:'Joined as employee #1 in India and built a 120-person professional services center from the ground up.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Part of the founding GCC leadership team; scaled the site from 70 to 450+ employees in under 3 years.'},
+      {company:'Netrix Global', period:'2019–2022', text:'Ran India operations across Pune, Mumbai, Kochi and Hyderabad — 180 people, 24/7 US/EMEA support.'}
+    ]},
+    {name:'AI-Driven Transformation', metric:'6-month process cut to 3 weeks', evidence:[
+      {company:'Onit', period:'2026–Present', text:'Built and productionized an Agentic AI Agile-PM app on Cursor, n8n, JIRA and LLMs; driving MCP-based metadata integration.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'Drove 18% faster delivery using AI-assisted development, plus AI-based estimation and QA automation.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Shipped Gen AI-powered smart search on the e-commerce platform and integrated GitHub Copilot org-wide.'}
+    ]},
+    {name:'Data Science & Analytics', metric:'9 ML models live, $5M+ margin', evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Built the data science function from proof-of-concept to production — 9 live ML models generating $5M+ in additional margin within 18 months.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'Data science and analytics initiatives generated $5M+ in additional margin.'}
+    ]},
+    {name:'Stakeholder & Executive Management', metric:'CIO-level trust, multi-timezone', evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Reported directly to the CIO — sole owner of the India delivery relationship for the UK’s largest airline & holiday company.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'Coordinated weekly across Marketing, Sales, HR, TA, RMG, L&D, Finance and Legal to run full account health.'},
+      {company:'Nuance', period:'2013–2019', text:'Represented offshore in Global Leadership Forums, shifting executive perception of India delivery.'}
+    ]},
+    {name:'Talent Strategy & Retention', metric:'<5% attrition, 16 years running', evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Hired 20+ engineering managers and 2 heads of delivery; 45+ roles across 20+ tech stacks; 60+ freshers over 3 years.'},
+      {company:'Nuance', period:'2013–2019', text:'Held attrition under 10% for 4 straight years (QoQ <8%) while scaling to 120 people.'},
+      {company:'Hitachi Consulting', period:'2011–2012', text:'Brought attrition down to under 5% within 6 months of joining.'}
+    ]},
+    {name:'Cost & Margin Optimization', metric:'7%+ margin improvement in 6 months', evidence:[
+      {company:'Clarion Technologies', period:'2025–2026', text:'Improved profitability 7%+ within 6 months; cut management bandwidth 28% and automated all reporting.'},
+      {company:'Nuance', period:'2013–2019', text:'Delivered $450K in cost savings in FY17 while managing a $750K sub-contractor engagement.'}
+    ]},
+    {name:'Customer Success & CSAT', metric:'98% CSAT sustained', evidence:[
+      {company:'Clarion Technologies', period:'2025–2026', text:'Sustained a C-Sat score of 5 with 85%+ survey coverage — 98% customer satisfaction.'},
+      {company:'Nuance', period:'2013–2019', text:'Delivered 100+ projects with no major escalations, all within timeline.'},
+      {company:'Onit', period:'2026–Present', text:'Introduced a "Clean UAT" standard to eliminate production issues during warranty.'}
+    ]}
+  ];
+
+  var skillsGrid = document.getElementById('skills-grid');
+  var skillDetail = document.getElementById('skill-detail');
+  var skillBtns = [];
+
+  function renderEvidence(container, item, accentClass){
+    container.innerHTML = '';
+    var head = document.createElement('div'); head.className = 'detail-head';
+    var h = document.createElement('h3'); h.textContent = item.name;
+    var badge = document.createElement('span'); badge.className = 'detail-badge'; badge.textContent = item.metric;
+    var note = document.createElement('span'); note.className = 'detail-note'; note.textContent = 'MORE EXAMPLES COMING SOON';
+    head.appendChild(h); head.appendChild(badge); head.appendChild(note);
+    container.appendChild(head);
+    var list = document.createElement('div'); list.className = 'evidence-list';
+    item.evidence.forEach(function(e){
+      var it = document.createElement('div'); it.className = 'evidence-item';
+      var src = document.createElement('div');
+      var name = document.createElement('span'); name.className = 'evidence-source'; name.textContent = e.company;
+      var per = document.createElement('span'); per.className = 'evidence-period'; per.textContent = e.period;
+      src.appendChild(name); src.appendChild(per);
+      var txt = document.createElement('div'); txt.className = 'evidence-text'; txt.textContent = e.text;
+      it.appendChild(src); it.appendChild(txt);
+      list.appendChild(it);
+    });
+    container.appendChild(list);
+  }
+
+  skills.forEach(function(skill){
+    var b = document.createElement('button');
+    b.className = 'skill-card'; b.type = 'button';
+    var n = document.createElement('div'); n.className = 'skill-name';
+    var nm = document.createElement('span'); nm.textContent = skill.name;
+    var more = document.createElement('span'); more.className = 'more'; more.textContent = 'KNOW MORE →';
+    n.appendChild(nm); n.appendChild(more);
+    var m = document.createElement('div'); m.className = 'skill-metric'; m.textContent = skill.metric;
+    b.appendChild(n); b.appendChild(m);
+    b.addEventListener('click', function(){
+      skillBtns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      renderEvidence(skillDetail, skill);
+      skillDetail.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'nearest'});
+    });
+    skillsGrid.appendChild(b);
+    skillBtns.push(b);
+    addTilt(b, 6);
+  });
+  skillBtns[0].classList.add('active');
+  renderEvidence(skillDetail, skills[0]);
+
+  /* ---------- TECH ---------- */
+  var tech = [
+    {cat:'AI / ML & GenAI', items:['Conversational AI','NLP','Agentic Tooling','MCP','GitHub Copilot','Claude Code','n8n','Cursor'], evidence:[
+      {company:'Onit', period:'2026–Present', text:'Agentic AI Agile-PM app in production; MCP-based metadata-driven integration; AI QA automation and estimation.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Gen AI smart search in e-commerce; 9 ML models live; GitHub Copilot integrated org-wide.'},
+      {company:'Nuance', period:'2013–2019', text:'Conversational IVR, voice biometrics and virtual assistants for enterprise customers on Azure.'}
+    ]},
+    {cat:'Cloud Platforms', items:['Azure','Google Cloud Platform','AWS'], evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Migrated the entire data estate from on-premises to GCP and Snowflake; cloud-native rewrite of 25+ apps.'},
+      {company:'Nuance', period:'2013–2019', text:'Delivered and supported conversational-AI workloads on Azure cloud for global enterprise customers.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'100+ concurrent projects across AWS, Azure and GCP customer environments.'}
+    ]},
+    {cat:'Data & Analytics', items:['Snowflake','BigQuery','DBT','SQL Server','Oracle','GA4','Power BI'], evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Major data platform revamp — Snowflake + GCP; built Data Engineering, Analytics and MLOps teams from scratch.'},
+      {company:'Hitachi Consulting', period:'2011–2012', text:'Managed services practice over Oracle BI, SQL & Oracle DBA estates.'}
+    ]},
+    {cat:'Languages & Backend', items:['Java','.NET / C#','Python','REST / SOAP','Web API','MVC'], evidence:[
+      {company:'Nuance', period:'2013–2019', text:'Java, web services, .NET/C# and Python across conversational-AI delivery teams.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'.NET and Python platform teams; API optimization across the booking platform.'}
+    ]},
+    {cat:'Frontend & Mobile', items:['React','Angular','Vue.js','Next.js','iOS','Android','Flutter','Kotlin','Swift'], evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Unified two apps into a single native mobile app; decoupled mobile from the e-commerce platform; React/Angular/Vue teams.'},
+      {company:'Clarion Technologies', period:'2025–2026', text:'Web and mobile app development across 100+ projects using modern JS frameworks.'}
+    ]},
+    {cat:'Platform & DevOps', items:['Kubernetes','Docker','Kafka','Azure DevOps','SonarQube'], evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Kubernetes and Kafka infrastructure; code compliance tooling; revamped code review process org-wide.'}
+    ]},
+    {cat:'CMS & E-Commerce', items:['Sitecore 10.2','Adobe CMS','Adobe AEM','Adobe CDP'], evidence:[
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Led the Sitecore → Adobe CMS migration and booking platform modernization for a $6.5B travel business.'}
+    ]},
+    {cat:'QA & Testing', items:['Selenium','Cucumber','Postman','Cyara','API Automation'], evidence:[
+      {company:'Onit', period:'2026–Present', text:'Introduced end-to-end QA processes and AI-based QA automation; Clean-UAT standard.'},
+      {company:'Jet2 Travel Tech', period:'2022–2025', text:'Selenium and Cucumber automation across e-commerce and business application releases.'}
+    ]},
+    {cat:'Middleware & ITSM', items:['WebSphere','BizTalk','SharePoint','ServiceNow','Remedy','JIRA'], evidence:[
+      {company:'IBM', period:'2012–2013', text:'WebSphere application support delivery on ITIL — 100% SLA adherence.'},
+      {company:'Netrix Global', period:'2019–2022', text:'24/7 managed services — infrastructure, datacenter, databases and cloud migration for US/EMEA customers.'}
+    ]}
+  ];
+
+  var techGrid = document.getElementById('tech-grid');
+  var techDetail = document.getElementById('tech-detail');
+  var techBtns = [];
+
+  tech.forEach(function(t){
+    var b = document.createElement('button');
+    b.className = 'tech-card'; b.type = 'button';
+    var head = document.createElement('div'); head.className = 'tech-cat';
+    var nm = document.createElement('span'); nm.textContent = t.cat;
+    var more = document.createElement('span'); more.className = 'more'; more.textContent = 'KNOW MORE →';
+    head.appendChild(nm); head.appendChild(more);
+    b.appendChild(head);
+    var row = document.createElement('div'); row.className = 'tech-items';
+    t.items.forEach(function(it){
+      var s = document.createElement('span'); s.className = 'titem'; s.textContent = it;
+      row.appendChild(s);
+    });
+    b.appendChild(row);
+    b.addEventListener('click', function(){
+      techBtns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      renderEvidence(techDetail, {name:t.cat, metric:t.items.length + ' technologies', evidence:t.evidence});
+      techDetail.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'nearest'});
+    });
+    techGrid.appendChild(b);
+    techBtns.push(b);
+    addTilt(b, 6);
+  });
+  techBtns[0].classList.add('active');
+  renderEvidence(techDetail, {name:tech[0].cat, metric:tech[0].items.length + ' technologies', evidence:tech[0].evidence});
+
+  /* ---------- COMPANIES DATA ---------- */
+  var companies = [
+    {id:'onit', company:'Onit', period:'Jan 2026 – Present', role:'Director — Professional Services · Head of CX Organization', major:true,
+      scale:'AI-native legal SaaS · global top-10 to SMB customers',
+      blurb:'Onit builds an AI-native SaaS legal management suite. I lead the CX organization — Implementation, Migration, Integration and QA — owning end-to-end customization, deployment and support.',
+      points:[
+        'Built and productionized an Agentic AI Agile-PM app using Cursor, n8n, JIRA and LLMs — saving significant effort and cycle time',
+        'Driving an AI-first culture: AI QA automation, AI-powered Agile, AI-enabled estimation, documentation-as-we-build',
+        'MCP-based metadata-driven integration and AI tools for data mapping and migration',
+        'Introduced end-to-end QA processes and AI-enabled requirement-to-sprint planning',
+        'Centralized staffing — better project planning and utilization management',
+        '"Clean UAT" standard — minimal to zero production issues during warranty'
+      ],
+      tech:['Agentic AI','MCP','n8n','Cursor','JIRA','LLMs','QA Automation']},
+    {id:'clarion', company:'Clarion Technologies', period:'Jan 2025 – Jan 2026', role:'Global Delivery Head', major:true,
+      scale:'300+ developers · 100+ projects · $15M+ portfolio',
+      blurb:'Led global delivery for 100+ customers across the Americas, Europe and Saudi — full accountability for revenue, P&L, account mining, customer satisfaction and delivery.',
+      points:[
+        'Improved profitability 5–7%+ within 6 months via revenue, margin and cost measures',
+        '$5M+ additional margin generated through data science and analytics initiatives',
+        '18% delivery time savings using AI-assisted development',
+        '98% customer satisfaction — C-Sat 5 with >85% coverage',
+        'Cut management bandwidth 28%; automated all reporting; improved collections and outstanding',
+        'Grew account headcounts from 2 to 25 developers within an SMB customer segment'
+      ],
+      tech:['Web','Mobile','Data Engineering','Data Science','AI/ML','Agile']},
+    {id:'jet2', company:'Jet2 Travel Tech', period:'Feb 2022 – Jan 2025', role:'Head of Delivery — GCC Head', major:true,
+      scale:'70 → 450+ employees · £4.4M portfolio · reported to CIO',
+      blurb:'Founding GCC leadership for the UK’s largest airline and holiday company ($6.5B revenue). Built the India site’s org structure, hiring engine and talent strategy across every function.',
+      points:[
+        'Scaled the site from 70 to 450+ people in under 3 years across 20+ technology stacks',
+        'Hired 20+ engineering managers, 2 heads of delivery, 45+ leadership roles, 60+ freshers',
+        'Transitioned ownership of 35+ applications to India without disrupting onshore relationships',
+        'Rewrote 25+ legacy applications cloud-native; unified mobile into a single native app',
+        'Gen AI smart search; Sitecore → Adobe CMS migration; booking platform modernization',
+        '9 data science models to production — $5M+ margin in 18 months; GCP + Snowflake data platform',
+        'Trained 310+ employees in Agile; integrated GitHub Copilot and code compliance tooling'
+      ],
+      tech:['.NET','Python','React','Angular','Vue','iOS','Android','GCP','Snowflake','Kubernetes','Kafka','Adobe']},
+    {id:'netrix', company:'Netrix Global', period:'Nov 2019 – Jan 2022', role:'Head of Delivery — GCC Head', major:true,
+      scale:'180 people · Pune, Mumbai, Kochi, Hyderabad · 24/7 US & EMEA',
+      blurb:'Ran India operations and delivery for a US managed-services and software business across telecom, healthcare and education — products plus large managed-services accounts.',
+      points:[
+        'Led 3+ M&As end to end — people, systems and delivery continuity',
+        '24/7 cost-effective support across US and EMEA regions',
+        'Built the operating system: HR processes, salary benchmarking, job-level matrix, KPI dashboards',
+        'Changed vendors for cost efficiency; brought new work into India with global leaders',
+        'Infrastructure, datacenter, cloud migration, analytics and end-to-end development delivery'
+      ],
+      tech:['Managed Services','Cloud Migration','Datacenter','Analytics','ITSM']},
+    {id:'nuance', company:'Nuance Communications', period:'May 2013 – Jul 2019', role:'Director, Professional Services — India Center Head', major:true,
+      scale:'Employee #1 → 120-person org · $80M portfolio',
+      blurb:'First employee in India — built the professional services organization for AI/ML conversational IVR, voice biometrics and virtual assistants, delivered on-premises and in Azure.',
+      points:[
+        'Built a 120-person org from zero: UI design, speech science, app dev, QA, cloud, BI, content',
+        'Owned an $80M revenue portfolio including a $30M single account',
+        '100+ projects delivered with zero major escalations, all within timelines',
+        'Grew offshore adoption from a few hundred hours to 150K+ hours within 2 years',
+        '$450K cost savings in FY 2016–17; managed a $750K/year sub-contractor engagement',
+        'Attrition under 10% for 4 consecutive years (QoQ <8%)'
+      ],
+      tech:['Java','Web Services','Angular','.NET','C#','Python','Azure','Oracle BI','iOS','Android']},
+    {id:'ibm', company:'IBM', period:'Mar 2012 – Mar 2013', role:'Technical Services Delivery Manager', major:false,
+      scale:'WebSphere delivery · ITIL framework',
+      blurb:'Service delivery for WebSphere estates under the ITIL framework.',
+      points:[
+        '100% SLA adherence and zero attrition from joining',
+        '"Best Manager Award" within 8 months',
+        'Top ratings in Corporate Audit and Standard Assessment',
+        'MTTR improvements, fragmentation analysis, DPP and automation savings'
+      ],
+      tech:['WebSphere','ITIL','Automation']},
+    {id:'hitachi', company:'Hitachi Consulting', period:'Feb 2011 – Feb 2012', role:'Senior Practice Manager', major:false,
+      scale:'33-person managed services practice',
+      blurb:'Ran the India managed-services organization supporting business-critical applications.',
+      points:[
+        'Supported Oracle BI, Dynamics AX, SQL & Oracle DBA, .NET/BizTalk/MOSS estates',
+        'Created and implemented a robust QA process; ITSM-based offshore delivery model',
+        'Attrition below 5% within 6 months; 100% SLA adherence'
+      ],
+      tech:['Oracle BI','Dynamics AX','.NET','BizTalk','SharePoint']},
+    {id:'avaya', company:'Avaya India', period:'Mar 2007 – Jan 2011', role:'Manager — Operations / Service Delivery', major:false,
+      scale:'GNOC Tier-3 · 90% of the Fortune 500',
+      blurb:'Led the GNOC and Incident Management teams providing Tier-3 support for Avaya unified communications worldwide.',
+      points:[
+        'Tier II & III remote infrastructure management for Avaya CM, Aura, Session Manager and gateways',
+        '18-engineer backbone team across Pune and Hyderabad in two shifts',
+        'Led org-wide initiatives earning repeated accolades for KPI performance'
+      ],
+      tech:['IP Telephony','Unified Comms','ITIL','Incident Management']},
+    {id:'early', company:'Siemens · Intellicon', period:'Oct 1998 – Mar 2007', role:'Customer Support Executive / Team Lead → Customer Support Engineer', major:false,
+      scale:'The foundation years',
+      blurb:'Where the discipline started — customer support and early team leadership on live enterprise systems.',
+      points:[
+        'Siemens (2004–2007): Customer Support Executive / Team Lead — Projects',
+        'Intellicon (1998–2004): Customer Support Engineer'
+      ],
+      tech:['Enterprise Support','Field Ops']}
+  ];
+
+  /* ---------- TIMELINE ---------- */
+  var tl = document.getElementById('tl');
+  companies.forEach(function(c){
+    var item = document.createElement('div');
+    item.className = 'tl-item' + (c.major ? ' major' : '');
+    var node = document.createElement('span'); node.className = 'tl-node'; node.setAttribute('aria-hidden','true');
+    item.appendChild(node);
+    var btn = document.createElement('button');
+    btn.className = 'tl-btn'; btn.type = 'button';
+    btn.setAttribute('aria-label', c.company + ' — jump to details');
+    var top = document.createElement('div'); top.className = 'tl-top';
+    var co = document.createElement('span'); co.className = 'tl-co'; co.textContent = c.company;
+    var per = document.createElement('span'); per.className = 'tl-period'; per.textContent = c.period;
+    var go = document.createElement('span'); go.className = 'tl-go'; go.textContent = 'VIEW DETAILS ↓';
+    top.appendChild(co); top.appendChild(per); top.appendChild(go);
+    var role = document.createElement('div'); role.className = 'tl-role'; role.textContent = c.role;
+    var scale = document.createElement('div'); scale.className = 'tl-scale'; scale.textContent = c.scale;
+    btn.appendChild(top); btn.appendChild(role); btn.appendChild(scale);
+    btn.addEventListener('click', function(){
+      var target = document.getElementById('co-' + c.id);
+      if(target){
+        target.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
+        target.classList.remove('flash');
+        void target.offsetWidth;
+        target.classList.add('flash');
+        setTimeout(function(){ target.classList.remove('flash'); }, 2400);
+      }
+    });
+    item.appendChild(btn);
+    tl.appendChild(item);
+  });
+
+  /* ---------- COMPANY CARDS ---------- */
+  var stack = document.getElementById('co-stack');
+  companies.forEach(function(c){
+    var card = document.createElement('article');
+    card.className = 'co-card reveal';
+    card.id = 'co-' + c.id;
+    var head = document.createElement('div'); head.className = 'co-head';
+    var h = document.createElement('h3'); h.textContent = c.company;
+    var per = document.createElement('span'); per.className = 'co-period'; per.textContent = c.period;
+    head.appendChild(h); head.appendChild(per);
+    card.appendChild(head);
+    var role = document.createElement('div'); role.className = 'co-role'; role.textContent = c.role + ' · ' + c.scale;
+    card.appendChild(role);
+    var blurb = document.createElement('p'); blurb.className = 'co-blurb'; blurb.textContent = c.blurb;
+    card.appendChild(blurb);
+    var ul = document.createElement('ul'); ul.className = 'co-points';
+    c.points.forEach(function(pt){
+      var li = document.createElement('li'); li.textContent = pt;
+      ul.appendChild(li);
+    });
+    card.appendChild(ul);
+    var techRow = document.createElement('div'); techRow.className = 'co-tech';
+    c.tech.forEach(function(t){
+      var s = document.createElement('span'); s.className = 'titem'; s.textContent = t;
+      techRow.appendChild(s);
+    });
+    card.appendChild(techRow);
+    var back = document.createElement('a'); back.className = 'back-top'; back.href = '#timeline'; back.textContent = '↑ BACK TO TIMELINE';
+    card.appendChild(back);
+    stack.appendChild(card);
+  });
+
+  /* ---------- SCROLL REVEAL + COUNTERS ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  var numTriggered = false;
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.1});
+    revealEls.forEach(function(elx){ io.observe(elx); });
+
+    var numIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !numTriggered){
+          numTriggered = true;
+          document.querySelectorAll('.num-value').forEach(animateCount);
+          numIo.disconnect();
+        }
+      });
+    }, {threshold:0.2});
+    numIo.observe(numGrid);
+  } else {
+    revealEls.forEach(function(elx){ elx.classList.add('in'); });
+    document.querySelectorAll('.num-value').forEach(animateCount);
+  }
+})();
+</script>
+</body>
+</html>
