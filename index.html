@@ -395,6 +395,25 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
   padding:0.35em 0.8em; border-radius:var(--r-pill);
 }
 
+/* ============ FLOATING GO BACK ============ */
+.goback{
+  position:fixed; bottom:1.3rem; left:50%; z-index:90;
+  transform:translateX(-50%) translateY(90px);
+  opacity:0; pointer-events:none;
+  display:inline-flex; align-items:center; gap:0.5em;
+  font-family:var(--font-body); font-size:0.92rem; font-weight:700;
+  color:var(--ink); cursor:pointer;
+  background:rgba(21,26,44,0.88);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(139,124,248,0.5);
+  border-radius:var(--r-pill);
+  padding:0.75em 1.7em;
+  box-shadow:0 14px 40px rgba(0,0,0,0.5);
+  transition:transform 0.3s ease, opacity 0.3s ease, border-color 0.2s;
+}
+.goback.show{ transform:translateX(-50%) translateY(0); opacity:1; pointer-events:auto; }
+.goback:hover, .goback:focus-visible{ border-color:var(--violet); }
+
 /* ============ BACK TO TOP ============ */
 .backtop-wrap{ display:flex; justify-content:center; padding:1rem 0 2.5rem; }
 .backtop{
@@ -706,6 +725,8 @@ footer{ padding-block:2.2rem; }
 <div class="backtop-wrap">
   <a class="backtop" href="#" id="backtop">↑ Back to top</a>
 </div>
+
+<button class="goback" id="goback" type="button">↩ Go back</button>
 
 <div class="modal-overlay" id="modal-overlay" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-label="Details">
@@ -1020,6 +1041,37 @@ footer{ padding-block:2.2rem; }
     testiGrid.appendChild(card);
     addTilt(card, 4);
   });
+
+  /* ---------- FLOATING GO BACK ---------- */
+  var goback = document.getElementById('goback');
+  var savedY = null;
+  var gobackArmed = false;
+  function rememberPosition(){
+    savedY = window.scrollY;
+    gobackArmed = false;
+    goback.classList.add('show');
+  }
+  document.addEventListener('click', function(e){
+    var jump = e.target.closest && e.target.closest('a[href^="#"], .tl-btn');
+    if(jump) rememberPosition();
+  });
+  goback.addEventListener('click', function(){
+    if(savedY !== null){
+      window.scrollTo({top:savedY, behavior: reduceMotion ? 'auto' : 'smooth'});
+    }
+    goback.classList.remove('show');
+    savedY = null;
+  });
+  window.addEventListener('scroll', function(){
+    if(savedY === null || !goback.classList.contains('show')) return;
+    var dist = Math.abs(window.scrollY - savedY);
+    if(!gobackArmed && dist > 250){ gobackArmed = true; }
+    else if(gobackArmed && dist < 80){
+      goback.classList.remove('show');
+      savedY = null;
+      gobackArmed = false;
+    }
+  }, {passive:true});
 
   /* ---------- BACK TO TOP ---------- */
   document.getElementById('backtop').addEventListener('click', function(e){
