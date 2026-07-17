@@ -139,6 +139,19 @@ button{ font-family:inherit; }
   -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
 }
 
+.hero-photo{
+  position:absolute;
+  top:1.2rem;
+  right:clamp(0.6rem,2.5vw,3rem);
+  height:clamp(340px,44vh,500px);
+  width:auto;
+  filter:drop-shadow(0 26px 55px rgba(0,0,0,0.55)) drop-shadow(0 0 40px rgba(139,124,248,0.12));
+  pointer-events:none;
+  user-select:none;
+  display:none;
+}
+@media (min-width:1200px){ .hero-photo{ display:block; } }
+
 .hero-name{
   font-family:var(--font-display);
   font-size:clamp(1.5rem,3.2vw,2.5rem); font-weight:800;
@@ -544,6 +557,7 @@ footer{ padding-block:2.2rem; }
     <div class="glow glow-3"></div>
   </div>
   <div class="hero-grid-lines" aria-hidden="true"></div>
+  <img class="hero-photo" src="naval-photo.webp" alt="Navalkishor Ravindra Mahendrakar" />
   <div class="wrap">
     <div class="hero-name">Navalkishor Ravindra Mahendrakar</div>
     <div class="hero-strip">
