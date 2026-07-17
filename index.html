@@ -248,6 +248,9 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
 .section-head{ display:flex; flex-direction:column; align-items:flex-start; gap:1rem; margin-bottom:2.8rem; max-width:72ch; }
 .section-head h2{ font-size:clamp(1.9rem,4vw,3rem); }
 .section-head p{ color:var(--ink-dim); font-size:1.04rem; }
+.section-head.compact{ align-items:center; text-align:center; max-width:none; margin-inline:auto; margin-bottom:2.2rem; }
+.section-head.compact h2{ font-size:clamp(1.25rem,2.2vw,1.75rem); white-space:nowrap; }
+@media (max-width:640px){ .section-head.compact h2{ white-space:normal; } }
 
 /* ============ NUMBERS ============ */
 #numbers .sec-label{ color:var(--violet); }
@@ -319,6 +322,8 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
   box-shadow:var(--shadow-card);
   padding:clamp(1.5rem,3vw,2.2rem);
 }
+#skilldeep{ scroll-margin-top:4.5rem; }
+.skilldeep-back{ display:flex; justify-content:center; margin-top:1.6rem; }
 .detail-head{ display:flex; flex-wrap:wrap; align-items:center; gap:0.7rem 1.2rem; margin-bottom:1.4rem; padding-bottom:1.2rem; border-bottom:1px solid var(--line); }
 .detail-head h3{ font-size:1.35rem; }
 .detail-badge{
@@ -551,7 +556,7 @@ footer{ padding-block:2.2rem; }
 
 <section id="numbers">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head compact reveal">
       <h2>Impact I made in numbers</h2>
     </div>
     <div class="num-grid reveal" id="num-grid"></div>
@@ -560,11 +565,10 @@ footer{ padding-block:2.2rem; }
 
 <section id="skills">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head compact reveal">
       <h2>The skills demonstrated — click to know more</h2>
     </div>
     <div class="skills-grid reveal" id="skills-grid"></div>
-    <div class="skill-detail reveal" id="skill-detail"></div>
   </div>
 </section>
 
@@ -617,6 +621,18 @@ footer{ padding-block:2.2rem; }
         <div><strong>Focus</strong> — Delivery Leadership · GCC Build · AI-Native Transformation</div>
         <div><strong>Certifications</strong> — PMP · ITIL Expert · CSM · Agile · CCNA</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="skilldeep">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>Skill deep-dive</h2>
+    </div>
+    <div class="skill-detail" id="skill-detail"></div>
+    <div class="skilldeep-back">
+      <a class="btn btn-ghost" href="#skills">← Back to Skills — pick another</a>
     </div>
   </div>
 </section>
@@ -781,7 +797,7 @@ footer{ padding-block:2.2rem; }
       skillBtns.forEach(function(x){ x.classList.remove('active'); });
       b.classList.add('active');
       renderEvidence(skillDetail, skill);
-      skillDetail.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'nearest'});
+      document.getElementById('skilldeep').scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
     });
     skillsGrid.appendChild(b);
     skillBtns.push(b);
