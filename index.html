@@ -101,7 +101,7 @@ button{ font-family:inherit; }
   padding:0.65rem 0.8rem 0.65rem 1.1rem;
   box-shadow:0 14px 40px rgba(0,0,0,0.45);
 }
-.nav-links{ display:none; gap:0.4rem; align-items:center; }
+.nav-links{ display:none; gap:0.4rem; align-items:center; flex-wrap:wrap; justify-content:center; }
 .nav-links a{
   text-decoration:none; font-size:1.12rem; font-weight:600; color:var(--ink-dim);
   padding:0.48em 1em; border-radius:var(--r-pill);
@@ -356,6 +356,121 @@ section{ padding-block:clamp(4rem,8vw,6rem); position:relative; }
 }
 .modal-close:hover, .modal-close:focus-visible{ color:var(--cyan); border-color:var(--cyan); transform:rotate(90deg); }
 .modal .detail-head{ padding-right:2.5rem; }
+
+/* ============ CONSULTING ============ */
+.consult-intro{ text-align:center; }
+.consult-intro p{ color:var(--ink-dim); font-size:0.98rem; max-width:88ch; margin:0 auto; }
+.consult-intro strong{ color:var(--ink); }
+.consult-grid{ display:grid; gap:1.2rem; grid-template-columns:1fr; perspective:1400px; }
+@media (min-width:720px){ .consult-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1080px){ .consult-grid{ grid-template-columns:repeat(3,1fr); } }
+.consult-card{
+  position:relative; overflow:hidden;
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-lg);
+  background:linear-gradient(160deg, rgba(21,26,44,0.55), rgba(15,19,34,0.65));
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow-card);
+  padding:1.7rem 1.6rem 1.5rem;
+  display:flex; flex-direction:column; gap:0.7rem;
+}
+.consult-card:nth-child(5n+1){ --hue:var(--violet); }
+.consult-card:nth-child(5n+2){ --hue:var(--cyan); }
+.consult-card:nth-child(5n+3){ --hue:var(--amber); }
+.consult-card:nth-child(5n+4){ --hue:var(--rose); }
+.consult-card:nth-child(5n+5){ --hue:var(--emerald); }
+.consult-card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--hue), transparent);
+  opacity:0.85;
+}
+.consult-title{ font-size:1.1rem; font-weight:750; }
+.consult-desc{ color:var(--ink-dim); font-size:0.92rem; flex-grow:1; }
+.consult-proof{
+  font-family:var(--font-mono); font-size:0.74rem; line-height:1.5;
+  color:var(--hue);
+  border-top:1px solid var(--line); padding-top:0.7rem;
+}
+.consult-proof::before{ content:"DELIVERED · "; color:var(--ink-faint); letter-spacing:0.08em; }
+
+/* ============ CASE STUDIES ============ */
+.case-grid{ display:grid; gap:1.2rem; grid-template-columns:1fr; perspective:1400px; }
+@media (min-width:720px){ .case-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1080px){ .case-grid{ grid-template-columns:repeat(3,1fr); } }
+.case-card{
+  position:relative; overflow:hidden; text-align:left; width:100%; cursor:pointer;
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-lg);
+  background:linear-gradient(160deg, rgba(21,26,44,0.55), rgba(15,19,34,0.65));
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow-card);
+  padding:1.6rem 1.5rem 1.4rem;
+  color:var(--ink);
+  display:flex; flex-direction:column; gap:0.55rem;
+  transition:border-color 0.25s;
+}
+.case-card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--emerald), transparent);
+  opacity:0; transition:opacity 0.25s;
+}
+.case-card:hover::before{ opacity:0.9; }
+.case-card:hover, .case-card:focus-visible{ border-color:rgba(78,216,162,0.5); }
+.case-tag{
+  font-family:var(--font-mono); font-size:0.66rem; font-weight:600;
+  letter-spacing:0.1em; text-transform:uppercase; color:var(--emerald);
+}
+.case-title{ font-size:1.05rem; font-weight:750; flex-grow:1; }
+.case-metric{ font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-dim); }
+
+/* modal case layout */
+.case-block{ margin-bottom:1.1rem; }
+.case-label{
+  display:block;
+  font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
+  letter-spacing:0.12em; text-transform:uppercase;
+  margin-bottom:0.3rem;
+}
+.case-label.c1{ color:var(--rose); }
+.case-label.c2{ color:var(--cyan); }
+.case-label.c3{ color:var(--emerald); }
+.case-label.c4{ color:var(--amber); }
+.case-block p{ color:var(--ink-dim); font-size:0.95rem; }
+.case-take{ margin:0; padding-left:1.2em; }
+.case-take li{ color:var(--ink); font-size:0.94rem; margin-bottom:0.3rem; }
+
+/* ============ PLAYBOOK ============ */
+.pb-stack{ display:flex; flex-direction:column; gap:0.9rem; }
+.pb-item{
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-md);
+  background:linear-gradient(160deg, rgba(21,26,44,0.55), rgba(15,19,34,0.65));
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow-card);
+  overflow:hidden;
+}
+.pb-item summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:center; gap:0.9rem;
+  padding:1.1rem 1.4rem;
+  font-size:1rem; font-weight:700; color:var(--ink);
+  transition:color 0.2s;
+}
+.pb-item summary::-webkit-details-marker{ display:none; }
+.pb-item summary::before{
+  content:"→"; color:var(--rose); font-size:1.05rem; flex:none;
+  transition:transform 0.25s;
+}
+.pb-item[open] summary::before{ transform:rotate(90deg); }
+.pb-item summary:hover{ color:var(--rose); }
+.pb-body{ padding:0 1.4rem 1.3rem 3.3rem; }
+.pb-body p{ color:var(--ink-dim); font-size:0.94rem; margin-bottom:0.7rem; }
+.pb-body ul{ margin:0 0 0.8rem; padding-left:1.2em; }
+.pb-body li{ color:var(--ink-dim); font-size:0.92rem; margin-bottom:0.3rem; }
+.pb-proof{
+  font-family:var(--font-mono); font-size:0.74rem; color:var(--emerald);
+}
+.pb-proof::before{ content:"PROOF · "; color:var(--ink-faint); letter-spacing:0.08em; }
 
 /* ============ TESTIMONIALS ============ */
 .testi-grid{ display:grid; gap:1.2rem; grid-template-columns:1fr; align-items:start; perspective:1400px; }
@@ -623,6 +738,7 @@ footer{ padding-block:2.2rem; }
         <a href="#summary">Snapshot</a>
         <a href="#timeline">Timeline</a>
         <a href="#companies">Companies</a>
+        <a href="#consulting">Consulting</a>
         <a href="#testimonials">Testimonials</a>
         <a class="nav-dl" href="https://naval2k.github.io/Naval-Mahendrakar-CV.pdf" download="Naval-Mahendrakar-CV.pdf">Download CV</a>
       </nav>
@@ -742,6 +858,36 @@ footer{ padding-block:2.2rem; }
       <h2>Company deep-dives — the full story, role by role</h2>
     </div>
     <div class="co-stack" id="co-stack"></div>
+  </div>
+</section>
+
+<section id="consulting">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>Consulting engagements — how I can help your organization</h2>
+    </div>
+    <div class="glass consult-intro reveal">
+      <p>Open to selective advisory and hands-on consulting engagements — remote-first from Pune, on-site where it matters. Every offering below is backed by work I have actually delivered, not theory. Engagement models: <strong>advisory retainer · short diagnostic/audit · workshop · interim hands-on leadership</strong>.</p>
+    </div>
+    <div class="consult-grid reveal" id="consult-grid"></div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>Case studies — real problems, measured outcomes. Click to read</h2>
+    </div>
+    <div class="case-grid reveal" id="case-grid"></div>
+  </div>
+</section>
+
+<section id="playbook">
+  <div class="wrap">
+    <div class="section-head compact reveal">
+      <h2>The leader's playbook — familiar problems, a balanced way through</h2>
+    </div>
+    <div class="pb-stack reveal" id="pb-stack"></div>
   </div>
 </section>
 
@@ -984,12 +1130,15 @@ footer{ padding-block:2.2rem; }
   var modalContent = document.getElementById('modal-content');
   var modalClose = document.getElementById('modal-close');
   var lastFocus = null;
-  function openModal(item){
-    renderEvidence(modalContent, item);
+  function showModal(){
     lastFocus = document.activeElement;
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
     modalClose.focus();
+  }
+  function openModal(item){
+    renderEvidence(modalContent, item);
+    showModal();
   }
   function closeModal(){
     overlay.hidden = true;
@@ -1100,6 +1249,155 @@ footer{ padding-block:2.2rem; }
     card.appendChild(mark); card.appendChild(q); card.appendChild(nm); card.appendChild(role); card.appendChild(rel);
     testiGrid.appendChild(card);
     addTilt(card, 4);
+  });
+
+  /* ---------- CONSULTING ---------- */
+  var consulting = [
+    {title:'Build a GCC in India — from zero to scale',
+     desc:'Site strategy, leadership hiring, org design, engineering & delivery processes, talent engine, and the culture that keeps people. From first employee to a full-scale capability center that global stakeholders trust.',
+     proof:'3 GCCs built (India & Philippines) · 70→450+ at Jet2 · employee #1 → 120 at Nuance'},
+    {title:'AI-first delivery transformation',
+     desc:'Move AI from pilots into the SDLC itself — estimation, QA automation, TDD, documentation, agentic tooling and governance — with adoption designed so teams embrace it rather than fear it.',
+     proof:'10+ AI tools productionized · 18% faster delivery · 6-month migration cut to 3 weeks'},
+    {title:'Delivery turnaround & KPI excellence',
+     desc:'Stand up a KPI-driven delivery cadence: dashboards, process audits, shift-left quality, Clean-UAT gates and a leadership review rhythm that finds problems before customers do.',
+     proof:'100% SLA at IBM & Hitachi · 98% CSAT · 100+ projects with zero major escalations'},
+    {title:'Margin & cost optimization — without layoffs',
+     desc:'Efficiency-led margin improvement: reporting automation, utilization discipline, account mining and AI-assisted delivery. Cost out, quality intact, morale intact.',
+     proof:'+7% profitability in 6 months · 28% management bandwidth freed · $450K savings FY19'},
+    {title:'Offshore strategy & application transition',
+     desc:'What to move, in what order, and how to transfer ownership — not just tasks — so onshore trust grows with every transition instead of eroding.',
+     proof:'100+ projects transitioned offshore · 35+ applications in one year with zero disruption'},
+    {title:'Data & AI function build',
+     desc:'Data Engineering, Data Science and ML-Ops teams from scratch — including the use-case pipeline that takes models from proof-of-concept to production revenue.',
+     proof:'9 ML models live in 18 months · $5M+ additional margin · GCP + Snowflake platform'}
+  ];
+  var consultGrid = document.getElementById('consult-grid');
+  consulting.forEach(function(c){
+    var card = document.createElement('article');
+    card.className = 'consult-card';
+    var t = document.createElement('div'); t.className = 'consult-title'; t.textContent = c.title;
+    var d = document.createElement('p'); d.className = 'consult-desc'; d.textContent = c.desc;
+    var p = document.createElement('div'); p.className = 'consult-proof'; p.textContent = c.proof;
+    card.appendChild(t); card.appendChild(d); card.appendChild(p);
+    consultGrid.appendChild(card);
+    addTilt(card, 4);
+  });
+
+  /* ---------- CASE STUDIES ---------- */
+  var cases = [
+    {tag:'GCC & Scale', title:'Scaling a GCC from 70 to 450+ in 30 months', metric:'450+ people · <5% attrition',
+     challenge:'Jet2 needed to evolve a small offshore presence into a full-scale GCC owning mission-critical delivery for a $6.5B travel business — without destabilizing onshore relationships or quality.',
+     approach:'Leadership layer first: 20+ engineering managers and 2 heads of delivery hired before mass scaling. Org structure, job-level matrix and a hiring engine designed for 20+ tech stacks. 35+ applications transitioned in the first year with explicit ownership contracts. 310+ people trained in Agile; L&D, Data Engineering, Data Science & ML-Ops, Digital Analytics and RPA functions built as the site matured.',
+     outcome:'450+ people in under 3 years, zero disruption to onshore delivery, attrition below 5% throughout.',
+     takeaways:['Hire the leadership layer before the masses — structure attracts talent.','Transition ownership, not just tasks — trust follows accountability.','Culture is a system you build deliberately, not a poster on the wall.']},
+    {tag:'Zero to One', title:'Employee #1 to a 120-person AI services organization', metric:'$80M portfolio',
+     challenge:'Nuance wanted an India professional-services arm for conversational AI — starting from one employee, with global stakeholders who had never worked with an India site.',
+     approach:'Earned trust in increments: proved value on small engagements, grew offshore hours from a few hundred to 150K+ within 2 years. Represented offshore in Global Leadership Forums to shift executive perception. Built full-spectrum capability — UI design, speech science, app development, QA, cloud, BI and content.',
+     outcome:'A 120-person organization owning an $80M revenue portfolio including a $30M single account; 100+ projects delivered with zero major escalations; attrition under 10% for 4 consecutive years.',
+     takeaways:['Trust compounds — win small, deliver visibly, repeat.','Executive visibility matters as much as delivery quality.','Full-spectrum capability is what turns a "vendor site" into a partner.']},
+    {tag:'Margin Turnaround', title:'+7% profitability in six months — without layoffs', metric:'98% CSAT held',
+     challenge:'Clarion needed rapid margin improvement across 100+ SMB accounts. The conventional playbook — cuts — risked quality, morale and customer relationships.',
+     approach:'Efficiency and growth instead of cuts: automated all reporting (freeing 28% of management bandwidth), AI-assisted development (18% faster delivery), data-science offerings generating $5M+ in additional margin, account mining that grew engagements from 2 to 25 developers, plus utilization and collections discipline.',
+     outcome:'Profitability up 7%+ within 6 months while customer satisfaction held at 98% — margin from efficiency and growth, not from people.',
+     takeaways:['Margin hides in bandwidth and automation long before it hides in headcount.','Growing accounts beats shrinking costs — mine what you already have.','Protect CSAT during a turnaround; it is the first thing cuts destroy.']},
+    {tag:'AI Transformation', title:'A 6-month migration process cut to 3 weeks with AI', metric:'~8× faster',
+     challenge:'At Onit, customer data migrations were a 6-month bespoke effort per customer — expensive, slow, and error-prone, dragging every implementation.',
+     approach:'Built AI-powered data mapping and migration tools plus MCP-based metadata-driven integration, then wrapped the AI output in AI QA automation and Clean-UAT gates so speed never compromised trust. Extended the same AI-first pattern to estimation, TDD and documentation-as-we-build.',
+     outcome:'End-to-end migration compressed to roughly 3 weeks, fewer warranty defects, and the foundation of an AI-first delivery culture.',
+     takeaways:['Point AI at the ugliest repeatable process first — that is where ROI is obvious.','Wrap AI output in QA gates; speed without trust is a step backwards.','One visible AI win converts more sceptics than any mandate.']},
+    {tag:'Modernization', title:'25+ legacy apps rewritten cloud-native while the business kept flying', metric:'zero release freeze',
+     challenge:'Jet2’s platforms carried years of legacy drag — but a live airline and holiday business cannot stop releasing for a rewrite.',
+     approach:'Incremental modernization tied to business events: 25+ applications rewritten cloud-native in slices, two mobile apps unified into a single native app, Sitecore migrated to Adobe CMS, the data estate moved to GCP + Snowflake, Kubernetes and Kafka platform underneath — with business releases continuing throughout.',
+     outcome:'A modernized estate with business continuity intact — no big-bang cutover, no frozen roadmap.',
+     takeaways:['Modernize in slices tied to business value, never as a big bang.','Platform and product teams must share one roadmap, or both fail.','Continuity is a feature — plan it explicitly.']},
+    {tag:'M&A Integration', title:'Three acquisitions integrated without losing the people', metric:'3+ M&As',
+     challenge:'Netrix’s acquisitions carried the classic M&A risk: systems merge on schedule, but the people — and the knowledge — walk out the door.',
+     approach:'People-first integration: salary benchmarking and a transparent job-level matrix early, honest communication before rumors filled the gap, delivery continuity commitments to customers, and vendor rationalization to fund the transition.',
+     outcome:'3+ mergers and acquisitions landed with delivery continuity and teams intact.',
+     takeaways:['In M&A, people-decisions communicated early beat perfect decisions communicated late.','Benchmark and level honestly — perceived unfairness is the real attrition driver.','Customers judge the merger by delivery continuity, not the press release.']}
+  ];
+  function renderCase(container, cs){
+    container.innerHTML = '';
+    var head = document.createElement('div'); head.className = 'detail-head';
+    var h = document.createElement('h3'); h.textContent = cs.title;
+    var badge = document.createElement('span'); badge.className = 'detail-badge'; badge.textContent = cs.metric;
+    head.appendChild(h); head.appendChild(badge);
+    container.appendChild(head);
+    [['Challenge','c1',cs.challenge],['Approach','c2',cs.approach],['Outcome','c3',cs.outcome]].forEach(function(b){
+      var blk = document.createElement('div'); blk.className = 'case-block';
+      var lab = document.createElement('span'); lab.className = 'case-label ' + b[1]; lab.textContent = b[0];
+      var p = document.createElement('p'); p.textContent = b[2];
+      blk.appendChild(lab); blk.appendChild(p);
+      container.appendChild(blk);
+    });
+    var blk = document.createElement('div'); blk.className = 'case-block';
+    var lab = document.createElement('span'); lab.className = 'case-label c4'; lab.textContent = 'Takeaways';
+    blk.appendChild(lab);
+    var ul = document.createElement('ul'); ul.className = 'case-take';
+    cs.takeaways.forEach(function(t){
+      var li = document.createElement('li'); li.textContent = t; ul.appendChild(li);
+    });
+    blk.appendChild(ul);
+    container.appendChild(blk);
+  }
+  var caseGrid = document.getElementById('case-grid');
+  cases.forEach(function(cs){
+    var b = document.createElement('button');
+    b.className = 'case-card'; b.type = 'button';
+    var tag = document.createElement('span'); tag.className = 'case-tag'; tag.textContent = cs.tag;
+    var t = document.createElement('span'); t.className = 'case-title'; t.textContent = cs.title;
+    var m = document.createElement('span'); m.className = 'case-metric'; m.textContent = cs.metric;
+    b.appendChild(tag); b.appendChild(t); b.appendChild(m);
+    b.addEventListener('click', function(){
+      renderCase(modalContent, cs);
+      showModal();
+    });
+    caseGrid.appendChild(b);
+    addTilt(b, 4);
+  });
+
+  /* ---------- PLAYBOOK ---------- */
+  var playbook = [
+    {problem:'"Attrition is bleeding our team dry."',
+     approach:'Attrition is rarely about salary alone — it is about fairness, growth and being seen. The balanced fix combines a transparent job-level matrix and salary benchmarking, visible career paths, leaders groomed from within, and a performance-driven yet employee-centric "One Team" culture where accountability and care coexist.',
+     points:['Benchmark and level transparently before people ask.','Groom leaders internally — a promotion path is the best retention tool.','Measure ESAT as seriously as CSAT.'],
+     proof:'Attrition held below 5% for 16 years across four companies'},
+    {problem:'"Our offshore team only gets the low-value work."',
+     approach:'Trust is transferred the same way it is earned — in increments, with ownership. Start with small wins delivered visibly, transition ownership (not just tasks) with explicit contracts, and put offshore leaders in front of global executives so perception shifts with the evidence.',
+     points:['Transition ownership with named accountability, not ticket queues.','Create executive visibility for offshore leaders — perception follows exposure.','Grow scope in planned increments; each success funds the next.'],
+     proof:'A few hundred offshore hours grown to 150K+ in 2 years at Nuance; 35+ apps owned by India within a year at Jet2'},
+    {problem:'"Delivery is always late and nobody can tell me why."',
+     approach:'Late delivery is usually an information problem before it is an execution problem. Install a KPI cadence — on-time delivery, velocity, defect leakage, utilization — on automated dashboards everyone sees, then fix the system with process audits, shift-left quality and Clean-UAT gates instead of blaming individuals.',
+     points:['Automate the dashboard first; opinions end when data starts.','Audit the process, not the people.','Shift quality left — late-found defects are the silent schedule killer.'],
+     proof:'100% SLA adherence at IBM & Hitachi; 100+ projects at Nuance with zero major escalations'},
+    {problem:'"Our AI adoption is stuck at pilots and demos."',
+     approach:'AI stalls when it is a mandate instead of a habit. Aim it at the ugliest repeatable process, wrap outputs in QA gates so nobody has to trust it blindly, and let one visible win recruit the sceptics. Leaders must be hands-on — teams adopt what their leaders actually use.',
+     points:['Pick one painful, repeatable process — not a moonshot.','QA-gate AI output so speed never costs credibility.','Leaders go hands-on first; adoption is modeled, not mandated.'],
+     proof:'6-month migration cut to 3 weeks at Onit; 18% faster delivery at Clarion; 10+ AI tools productionized'},
+    {problem:'"We need costs down but cannot afford a quality or morale hit."',
+     approach:'The first place to find margin is waste, not people: automate reporting, tighten utilization, mine existing accounts for growth, and let AI take the repetitive load. Cuts that hurt morale spend more in attrition and rework than they save on paper.',
+     points:['Automation before headcount — always in that order.','Grow existing accounts; mining beats hunting.','Track CSAT through the turnaround as the guardrail metric.'],
+     proof:'+7% profitability in 6 months at Clarion with 98% CSAT intact and no layoffs'},
+    {problem:'"We are acquiring a company and afraid the people will leave."',
+     approach:'People decide whether to stay in the first weeks, based on fairness and honesty — not the integration plan’s elegance. Communicate early even when answers are incomplete, benchmark and level transparently, and give customers delivery-continuity commitments so revenue holds while the org settles.',
+     points:['Communicate before the rumor mill does — uncertainty is the enemy.','Fair leveling and pay parity first; culture-fit workshops later.','Protect delivery continuity visibly; it steadies both customers and staff.'],
+     proof:'3+ M&As integrated at Netrix with teams and delivery intact'}
+  ];
+  var pbStack = document.getElementById('pb-stack');
+  playbook.forEach(function(pb){
+    var d = document.createElement('details'); d.className = 'pb-item';
+    var s = document.createElement('summary'); s.textContent = pb.problem;
+    var body = document.createElement('div'); body.className = 'pb-body';
+    var p = document.createElement('p'); p.textContent = pb.approach;
+    var ul = document.createElement('ul');
+    pb.points.forEach(function(pt){
+      var li = document.createElement('li'); li.textContent = pt; ul.appendChild(li);
+    });
+    var proof = document.createElement('div'); proof.className = 'pb-proof'; proof.textContent = pb.proof;
+    body.appendChild(p); body.appendChild(ul); body.appendChild(proof);
+    d.appendChild(s); d.appendChild(body);
+    pbStack.appendChild(d);
   });
 
   /* ---------- PRINT: finalize counters & reveals ---------- */
